@@ -1,0 +1,288 @@
+import { signIn, signOut, useSession } from "next-auth/react";
+import { useTranslation } from "next-i18next";
+import { useRouter } from "next/router";
+import { useTheme } from "next-themes";
+import { useState, useEffect } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Separator } from "@/components/ui/separator";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import {
+  DiscordLogo,
+  Sun,
+  Moon,
+  Translate,
+  List,
+  X,
+  Monitor,
+} from "@phosphor-icons/react";
+import IndieCreatorsHQLight from "../../public/assets/Indie_Creatos_HQ_Logo_Light.svg";
+import IndieCreatorsHQDark from "../../public/assets/Indie_Creatos_HQ_Logo_Dark.svg";
+
+export default function Header(): JSX.Element {
+  const { theme, setTheme } = useTheme();
+
+  const router = useRouter();
+
+  const { t, i18n } = useTranslation();
+
+  const [lang, setLang] = useState(i18n.language);
+
+  const changeLanguage = (lang: string) => {
+    void router.push(router.pathname, router.pathname, { locale: lang });
+    setLang(lang);
+  };
+
+  const { data: sessionData } = useSession();
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  useEffect(() => {
+    document.body.style.overflow = isMenuOpen ? "hidden" : "unset";
+
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isMenuOpen]);
+
+  const menuBg = isMenuOpen ? "backdrop-blur-sm bg-background/80" : "";
+
+  return (
+    <header className="sticky top-0 z-50">
+      <div
+        className={`flex w-full flex-col items-center justify-between px-4 py-3 xl:flex-row xl:px-40 ${menuBg}`}
+      >
+        <div className="flex w-full items-center justify-between xl:w-auto">
+          <Link href="/">
+            <Image
+              src={IndieCreatorsHQLight as string}
+              alt="Indie Creators HQ"
+              className="h-12 w-auto dark:hidden lg:h-16"
+            />
+            <Image
+              src={IndieCreatorsHQDark as string}
+              alt="Indie Creators HQ"
+              className="hidden h-12 w-auto dark:block lg:h-16"
+            />
+          </Link>
+          <div className="xl:hidden">
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={() => {
+                setIsMenuOpen(!isMenuOpen);
+              }}
+            >
+              {!isMenuOpen === true ? (
+                <List weight="regular" className="h-5 w-5" />
+              ) : (
+                <X weight="regular" className="h-5 w-5" />
+              )}
+            </Button>
+          </div>
+        </div>
+        <nav className="hidden items-center gap-4 font-medium xl:flex">
+          <div className="flex gap-4">
+            <div>
+              {sessionData ? (
+                <div className="flex items-center justify-between gap-2">
+                  <Avatar>
+                    <AvatarImage
+                      src={sessionData.user.image ?? ""}
+                      alt="User profile picture"
+                    />
+                    <AvatarFallback>IC</AvatarFallback>
+                  </Avatar>
+                  <div>
+                    <div>{sessionData.user?.name}</div>
+                    <div onClick={() => void signOut()}>
+                      {t("header.signOut")}
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <Button
+                  variant="ghost"
+                  className="font-bold"
+                  onClick={() => void signIn()}
+                >
+                  <DiscordLogo
+                    size={24}
+                    weight="fill"
+                    className="mr-2 text-[#5865F2]"
+                  />
+                  {t("signIn")}
+                </Button>
+              )}
+            </div>
+            <Separator orientation="vertical" className="bg-primary" />
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="outline" size="icon">
+                  {theme === "light" ? (
+                    <Moon
+                      weight="regular"
+                      size={16}
+                      className="text-violet-500"
+                    />
+                  ) : (
+                    <Sun
+                      weight="regular"
+                      size={16}
+                      className="text-yellow-500"
+                    />
+                  )}
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                <DropdownMenuItem onClick={() => setTheme("light")}>
+                  {t("header.light")}
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setTheme("dark")}>
+                  {t("header.dark")}
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setTheme("system")}>
+                  {t("header.system")}
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="outline" size="icon">
+                  <Translate
+                    weight="regular"
+                    size={16}
+                    className="text-blue-500"
+                  />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                <DropdownMenuItem onClick={() => changeLanguage("en")}>
+                  English
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => changeLanguage("es")}>
+                  Español
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
+        </nav>
+      </div>
+      {isMenuOpen && (
+        <div className="fixed left-0 top-[20] z-50 flex h-full w-full flex-col gap-6 bg-background/80 px-4 py-2 backdrop-blur-sm lg:px-16 xl:hidden">
+          <nav className="flex flex-col gap-4">
+            {sessionData ? (
+              <div className="flex flex-col gap-4">
+                <ul>
+                  <li className="flex items-center justify-between border-b-[1px] py-2">
+                    <div>{sessionData.user?.name}</div>
+                    <Avatar>
+                      <AvatarImage
+                        src={sessionData.user.image ?? ""}
+                        alt="User profile picture"
+                      />
+                      <AvatarFallback>IC</AvatarFallback>
+                    </Avatar>
+                  </li>
+                  <li className="border-b-[1px] py-3">
+                    <Link href="/settings">{t("header.settings")}</Link>
+                  </li>
+                </ul>
+                <Button
+                  variant="outline"
+                  className="font-bold"
+                  onClick={() => void signOut()}
+                >
+                  {t("header.signOut")}
+                </Button>
+              </div>
+            ) : (
+              <Button
+                variant="outline"
+                className="font-bold"
+                onClick={() => void signIn()}
+              >
+                <DiscordLogo
+                  size={24}
+                  weight="fill"
+                  className="mr-2 text-[#5865F2]"
+                />
+                {t("header.signIn")}
+              </Button>
+            )}
+            <ul>
+              <li className="flex items-center justify-between border-b-[1px] py-2">
+                {t("header.theme")}
+                <Select
+                  defaultValue={theme}
+                  onValueChange={(value: string) => setTheme(value)}
+                >
+                  <SelectTrigger className="w-32">
+                    <SelectValue placeholder={t("header.theme")} />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="light">
+                      <div className="flex items-center gap-2">
+                        {t("header.light")}
+                        <Sun
+                          weight="regular"
+                          size={16}
+                          className="text-yellow-500"
+                        />
+                      </div>
+                    </SelectItem>
+                    <SelectItem value="dark">
+                      <div className="flex items-center gap-2">
+                        {t("header.dark")}
+                        <Moon
+                          weight="regular"
+                          size={16}
+                          className="text-violet-500"
+                        />
+                      </div>
+                    </SelectItem>
+                    <SelectItem value="system">
+                      <div className="flex items-center gap-2">
+                        {t("header.system")}
+                        <Monitor weight="regular" size={16} />
+                      </div>
+                    </SelectItem>
+                  </SelectContent>
+                </Select>
+              </li>
+              <li className="flex items-center justify-between border-b-[1px] py-2">
+                {t("header.language")}
+                <Select
+                  defaultValue={lang}
+                  onValueChange={(value: string) => changeLanguage(value)}
+                >
+                  <SelectTrigger className="w-32">
+                    <SelectValue placeholder={t("header.language")} />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="en">English</SelectItem>
+                    <SelectItem value="es">Español</SelectItem>
+                  </SelectContent>
+                </Select>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      )}
+    </header>
+  );
+}

@@ -1,0 +1,17 @@
+{
+  "header": {
+    "signIn": "Sign in",
+    "theme": "Theme",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System",
+    "language": "Language",
+    "settings": "Settings",
+    "signOut": "Sign out"
+  },
+  "title": "Indie Creators HQ English",
+  "footer": {
+    "madeWith": "Made with",
+    "by": "by"
+  }
+}

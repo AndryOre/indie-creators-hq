@@ -1,0 +1,17 @@
+{
+  "header": {
+    "signIn": "Iniciar sesión",
+    "theme": "Tema",
+    "light": "Claro",
+    "dark": "Oscuro",
+    "system": "Sistema",
+    "language": "Idioma",
+    "settings": "Ajustes",
+    "signOut": "Cerrar sesión"
+  },
+  "title": "Indie Creators HQ Español",
+  "footer": {
+    "madeWith": "Hecho con",
+    "by": "por"
+  }
+}
