@@ -11,6 +11,8 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
 } from "@/components/ui/dropdown-menu";
 import { Separator } from "@/components/ui/separator";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -29,6 +31,8 @@ import {
   List,
   X,
   Monitor,
+  Gear,
+  SignOut,
 } from "@phosphor-icons/react";
 import IndieCreatorsHQLight from "../../public/assets/Indie_Creatos_HQ_Logo_Light.svg";
 import IndieCreatorsHQDark from "../../public/assets/Indie_Creatos_HQ_Logo_Dark.svg";
@@ -99,21 +103,37 @@ export default function Header(): JSX.Element {
           <div className="flex gap-4">
             <div>
               {sessionData ? (
-                <div className="flex items-center justify-between gap-2">
-                  <Avatar>
-                    <AvatarImage
-                      src={sessionData.user.image ?? ""}
-                      alt="User profile picture"
-                    />
-                    <AvatarFallback>IC</AvatarFallback>
-                  </Avatar>
-                  <div>
-                    <div>{sessionData.user?.name}</div>
-                    <div onClick={() => void signOut()}>
-                      {t("header.signOut")}
-                    </div>
-                  </div>
-                </div>
+                <DropdownMenu>
+                  <DropdownMenuTrigger>
+                    <Avatar className="border-[1px]">
+                      <AvatarImage
+                        src={sessionData.user.image ?? ""}
+                        alt="User profile picture"
+                      />
+                      <AvatarFallback>IC</AvatarFallback>
+                    </Avatar>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent>
+                    <DropdownMenuLabel>
+                      {sessionData.user?.name}
+                    </DropdownMenuLabel>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem className="text-muted-foreground">
+                      <Link
+                        href="/settings"
+                        className="flex w-full items-center justify-between"
+                      >
+                        {t("header.settings")} <Gear size={16} />
+                      </Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem
+                      className="flex w-full items-center justify-between text-muted-foreground"
+                      onClick={() => void signOut()}
+                    >
+                      {t("header.signOut")} <SignOut size={16} />
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
               ) : (
                 <Button
                   variant="ghost"
@@ -125,7 +145,7 @@ export default function Header(): JSX.Element {
                     weight="fill"
                     className="mr-2 text-[#5865F2]"
                   />
-                  {t("signIn")}
+                  {t("header.signIn")}
                 </Button>
               )}
             </div>
@@ -190,7 +210,7 @@ export default function Header(): JSX.Element {
                 <ul>
                   <li className="flex items-center justify-between border-b-[1px] py-2">
                     <div>{sessionData.user?.name}</div>
-                    <Avatar>
+                    <Avatar className="border-[1px]">
                       <AvatarImage
                         src={sessionData.user.image ?? ""}
                         alt="User profile picture"
@@ -199,7 +219,12 @@ export default function Header(): JSX.Element {
                     </Avatar>
                   </li>
                   <li className="border-b-[1px] py-3">
-                    <Link href="/settings">{t("header.settings")}</Link>
+                    <Link
+                      href="/settings"
+                      className="flex w-full items-center justify-between"
+                    >
+                      {t("header.settings")} <Gear size={24} />
+                    </Link>
                   </li>
                 </ul>
                 <Button
@@ -207,6 +232,7 @@ export default function Header(): JSX.Element {
                   className="font-bold"
                   onClick={() => void signOut()}
                 >
+                  <SignOut size={16} className="mr-2" />
                   {t("header.signOut")}
                 </Button>
               </div>
