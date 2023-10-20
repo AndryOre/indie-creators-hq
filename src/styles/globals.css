@@ -57,3 +57,9 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  .dot-pattern {
+    @apply bg-[url('../../public/assets/pattern-light.svg')] bg-center bg-repeat dark:bg-[url('../../public/assets/pattern-dark.svg')];
+  }
+}
