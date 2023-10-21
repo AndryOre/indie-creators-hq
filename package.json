@@ -1,6 +1,6 @@
 {
   "name": "indie-creators-hq",
-  "version": "0.1.0",
+  "version": "0.1.0-dev",
   "private": true,
   "scripts": {
     "build": "next build",
@@ -9,7 +9,8 @@
     "dev": "next dev",
     "postinstall": "prisma generate",
     "lint": "next lint",
-    "start": "next start"
+    "start": "next start",
+    "release": "release-it"
   },
   "dependencies": {
     "@next-auth/prisma-adapter": "^1.0.7",
@@ -44,6 +45,7 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
+    "@release-it/conventional-changelog": "^7.0.2",
     "@types/eslint": "^8.44.2",
     "@types/node": "^18.16.0",
     "@types/react": "^18.2.20",
@@ -57,6 +59,7 @@
     "prettier": "^3.0.0",
     "prettier-plugin-tailwindcss": "^0.5.1",
     "prisma": "^5.1.1",
+    "release-it": "^16.2.1",
     "tailwindcss": "^3.3.3",
     "typescript": "^5.1.6"
   },
