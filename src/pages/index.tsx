@@ -2,7 +2,10 @@ import type { NextPage, GetStaticProps } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import Head from "next/head";
+import Link from "next/link";
 import MainLayout from "@/components/layout/mainLayout";
+import { Button } from "@/components/ui/button";
+import { DiscordLogo } from "@phosphor-icons/react";
 
 const Home: NextPage = () => {
   const { t } = useTranslation("common");
@@ -60,7 +63,28 @@ const Home: NextPage = () => {
           content="https://res.cloudinary.com/dhwxnbnaj/image/upload/v1697662035/Indie%20Creatos%20HQ/Indie_Creators_HQ_t48m20.png"
         />
       </Head>
-      <MainLayout>{t("title")}</MainLayout>
+      <MainLayout>
+        <div className="flex flex-col items-center gap-8">
+          <div className="flex flex-col items-center gap-4 text-center">
+            <div className="bg-gradient-to-t from-primary to-muted bg-clip-text text-5xl font-bold text-transparent dark:bg-gradient-to-b dark:to-primary-foreground md:text-6xl xl:text-8xl">
+              {t("hero.puv")}
+            </div>
+            <div className="text-muted-foreground lg:text-lg">
+              {t("hero.desc")}
+            </div>
+          </div>
+          <Link
+            href="https://discord.gg/indie-creators-hq-by-serudda-972567584580984852"
+            rel="noopener"
+            target="_blank"
+          >
+            <Button>
+              <DiscordLogo size={24} className="mr-2" />
+              {t("hero.cta")}
+            </Button>
+          </Link>
+        </div>
+      </MainLayout>
     </>
   );
 };
