@@ -1,0 +1,21 @@
+{
+  "header": {
+    "signIn": "Sign in",
+    "theme": "Theme",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System",
+    "language": "Language",
+    "settings": "Settings",
+    "signOut": "Sign out"
+  },
+  "hero": {
+    "puv": "Power your creativity",
+    "desc": "Unleash your creative potential with us, build innovative projects, and be part of a community that values collaboration.",
+    "cta": "Join Now"
+  },
+  "footer": {
+    "madeWith": "Made with",
+    "by": "by"
+  }
+}

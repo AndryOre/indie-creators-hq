@@ -1,0 +1,21 @@
+{
+  "header": {
+    "signIn": "Iniciar sesión",
+    "theme": "Tema",
+    "light": "Claro",
+    "dark": "Oscuro",
+    "system": "Sistema",
+    "language": "Idioma",
+    "settings": "Ajustes",
+    "signOut": "Cerrar sesión"
+  },
+  "hero": {
+    "puv": "Potencia tu creatividad",
+    "desc": "Descubre tu potencial creativo con nosotros, construye proyectos innovadores y forma parte de una comunidad que valora la colaboración.",
+    "cta": "Únete Ahora"
+  },
+  "footer": {
+    "madeWith": "Hecho con",
+    "by": "por"
+  }
+}
