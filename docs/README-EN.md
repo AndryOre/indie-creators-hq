@@ -1,24 +1,24 @@
-> 🌐 [Don't speak Spanish? Click here for the English version.](docs/README-EN.md)
+> 🌐 [¿No hablas inglés? Haz clic aquí para la versión en español.](README.md)
 
 <h1 align="center">Indie Creators HQ</h1>
 
 <p align="center">
-  <a href="#tech-stack--features">🌟 <strong>Características</strong></a> ·
-  <a href="#tech-stack--features">🧰 <strong>Tecnologías</strong></a> ·
+  <a href="#tech-stack--features">🌟 <strong>Features</strong></a> ·
+  <a href="#tech-stack--features">🧰 <strong>Tech Stack</strong></a> ·
 </p>
 <br/>
 
-**Indie Creators HQ** es una comunidad en línea que reúne a Creadores Independientes. Nuestra misión es potenciar la creatividad y la colaboración en proyectos innovadores.
+**Indie Creators HQ** is an online community that brings together Independent Creators. Our mission is to empower creativity and collaboration in innovative projects.
 
 <img src="https://res.cloudinary.com/dhwxnbnaj/image/upload/v1697662035/Indie%20Creatos%20HQ/Indie_Creators_HQ_t48m20.png" style="height: 384px"/>
 
-## 🌟 Características
+## 🌟 Features
 
-- 📱 **Facilita el Empoderamiento de tu Creatividad:**: Descubre y desarrolla rápidamente tu potencial creativo.
-- 🚀 **Colaboración en Proyectos Innovadores**: Colabora en emocionantes proyectos con creadores afines.
-- 💡 **Comunidad Valiosa**: Forma parte de una comunidad que valora el trabajo en equipo, la innovación y la creatividad.
+- 📱 **Easy Creativity Empowerment**: Quickly discover and develop your creative potential.
+- 🚀 **Innovative Project Collaboration**: Collaborate on exciting projects with like-minded creators.
+- 💡 **Valuable Community**: Be part of a community that values teamwork, innovation, and creativity.
 
-## 🧰 Tecnologías
+## 🧰 Tech Stack
 
 - [![NextJS][NextJS]][NextJS-url]
 - [![TypeScript][TypeScript]][TypeScript-url]
@@ -29,9 +29,9 @@
 - [![ShadcnUI][ShadcnUI]][ShadcnUI-url]
 - [![i18next][i18next]][i18next-url]
 
-## 📜 Licencia
+## 📜 License
 
-Este proyecto está bajo la licencia MIT. Consulta [LICENCIA](../CODE_OF_CONDUCT.md) para más información.
+This project is licensed under the MIT License. See [LICENSE](CODE_OF_CONDUCT.md) for more information.
 
 [NextJS]: https://img.shields.io/badge/Next.js-000000.svg?style=for-the-badge&logo=nextdotjs&logoColor=white
 [NextJS-url]: https://nextjs.org/
