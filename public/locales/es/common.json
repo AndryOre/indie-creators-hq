@@ -9,7 +9,11 @@
     "settings": "Ajustes",
     "signOut": "Cerrar sesión"
   },
-  "title": "Indie Creators HQ Español",
+  "hero": {
+    "puv": "Potencia tu creatividad",
+    "desc": "Descubre tu potencial creativo con nosotros, construye proyectos innovadores y forma parte de una comunidad que valora la colaboración.",
+    "cta": "Únete Ahora"
+  },
   "footer": {
     "madeWith": "Hecho con",
     "by": "por"

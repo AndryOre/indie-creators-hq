@@ -9,7 +9,11 @@
     "settings": "Settings",
     "signOut": "Sign out"
   },
-  "title": "Indie Creators HQ English",
+  "hero": {
+    "puv": "Power your creativity",
+    "desc": "Unleash your creative potential with us, build innovative projects, and be part of a community that values collaboration.",
+    "cta": "Join Now"
+  },
   "footer": {
     "madeWith": "Made with",
     "by": "by"
