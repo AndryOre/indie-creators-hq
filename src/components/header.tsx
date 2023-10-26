@@ -47,6 +47,7 @@ export default function Header(): JSX.Element {
   const [lang, setLang] = useState(i18n.language);
 
   const changeLanguage = (lang: string) => {
+    localStorage.setItem("lang", lang);
     void router.push(router.pathname, router.pathname, { locale: lang });
     setLang(lang);
   };
