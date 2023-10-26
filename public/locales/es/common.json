@@ -10,8 +10,14 @@
     "signOut": "Cerrar sesión"
   },
   "hero": {
-    "puv": "Potencia tu creatividad",
-    "desc": "Descubre tu potencial creativo con nosotros, construye proyectos innovadores y forma parte de una comunidad que valora la colaboración.",
+    "puv": {
+      "powerYour": "Potencia tu",
+      "creativity": "creatividad"
+    },
+    "desc": {
+      "unleash": "Descubre tu potencial creativo con nosotros, construye proyectos innovadores",
+      "bePart": "y forma parte de una comunidad que valora la colaboración."
+    },
     "cta": "Únete Ahora"
   },
   "footer": {
