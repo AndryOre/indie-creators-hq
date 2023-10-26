@@ -66,11 +66,13 @@ const Home: NextPage = () => {
       <MainLayout>
         <div className="flex flex-col items-center gap-8">
           <div className="flex flex-col items-center gap-4 text-center">
-            <div className="bg-gradient-to-t from-primary to-muted bg-clip-text text-5xl font-bold text-transparent dark:bg-gradient-to-b dark:to-primary-foreground md:text-6xl xl:text-8xl">
-              {t("hero.puv")}
+            <div className="text-gradient text-5xl font-bold md:text-6xl xl:text-8xl">
+              <div>{t("hero.puv.powerYour")}</div>
+              <div>{t("hero.puv.creativity")}</div>
             </div>
             <div className="text-muted-foreground lg:text-lg">
-              {t("hero.desc")}
+              <div>{t("hero.desc.unleash")}</div>
+              <div>{t("hero.desc.bePart")}</div>
             </div>
           </div>
           <Link
@@ -78,10 +80,18 @@ const Home: NextPage = () => {
             rel="noopener"
             target="_blank"
           >
-            <Button>
-              <DiscordLogo size={24} className="mr-2" />
-              {t("hero.cta")}
-            </Button>
+            <div className="dark:hidden">
+              <Button variant="secondary">
+                <DiscordLogo size={24} className="mr-2" />
+                {t("hero.cta")}
+              </Button>
+            </div>
+            <div className="hidden dark:block">
+              <Button>
+                <DiscordLogo size={24} className="mr-2" />
+                {t("hero.cta")}
+              </Button>
+            </div>
           </Link>
         </div>
       </MainLayout>

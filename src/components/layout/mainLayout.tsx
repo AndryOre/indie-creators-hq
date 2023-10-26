@@ -7,7 +7,7 @@ interface MainLayoutProps {
 
 export default function MainLayout({ children }: MainLayoutProps): JSX.Element {
   return (
-    <div className="pattern-dots dot-pattern flex h-screen flex-col bg-background">
+    <div className="dot-pattern flex h-screen flex-col">
       <Header />
       <div className="flex grow flex-col items-center justify-center px-4 py-14 lg:px-16 xl:px-40	">
         {children}
