@@ -138,7 +138,7 @@ export default function Header(): JSX.Element {
                 <Button
                   variant="ghost"
                   className="font-bold"
-                  onClick={() => void signIn()}
+                  onClick={() => void signIn("discord")}
                 >
                   <DiscordLogo
                     size={24}
@@ -240,7 +240,7 @@ export default function Header(): JSX.Element {
               <Button
                 variant="outline"
                 className="font-bold"
-                onClick={() => void signIn()}
+                onClick={() => void signIn("discord")}
               >
                 <DiscordLogo
                   size={24}
