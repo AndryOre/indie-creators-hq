@@ -7,7 +7,11 @@
     "system": "Sistema",
     "language": "Idioma",
     "settings": "Ajustes",
-    "signOut": "Cerrar sesión"
+    "signOut": "Cerrar sesión",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú",
+    "changeTheme": "Cambiar tema",
+    "changeLanguage": "Cambiar idioma"
   },
   "hero": {
     "puv": {

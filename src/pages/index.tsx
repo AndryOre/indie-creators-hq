@@ -81,13 +81,13 @@ const Home: NextPage = () => {
             target="_blank"
           >
             <div className="dark:hidden">
-              <Button variant="secondary">
+              <Button variant="secondary" aria-label={t("hero.cta")}>
                 <DiscordLogo size={24} className="mr-2" />
                 {t("hero.cta")}
               </Button>
             </div>
             <div className="hidden dark:block">
-              <Button>
+              <Button aria-label={t("hero.cta")}>
                 <DiscordLogo size={24} className="mr-2" />
                 {t("hero.cta")}
               </Button>
