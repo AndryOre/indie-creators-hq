@@ -47,6 +47,7 @@ export default function Header(): JSX.Element {
   const [lang, setLang] = useState(i18n.language);
 
   const changeLanguage = (lang: string) => {
+    localStorage.setItem("lang", lang);
     void router.push(router.pathname, router.pathname, { locale: lang });
     setLang(lang);
   };
@@ -90,6 +91,9 @@ export default function Header(): JSX.Element {
               onClick={() => {
                 setIsMenuOpen(!isMenuOpen);
               }}
+              aria-label={
+                isMenuOpen ? t("header.closeMenu") : t("header.openMenu")
+              }
             >
               {!isMenuOpen === true ? (
                 <List weight="regular" className="h-5 w-5" />
@@ -139,6 +143,7 @@ export default function Header(): JSX.Element {
                   variant="ghost"
                   className="font-bold"
                   onClick={() => void signIn("discord")}
+                  aria-label={t("header.signIn")}
                 >
                   <DiscordLogo
                     size={24}
@@ -152,7 +157,11 @@ export default function Header(): JSX.Element {
             <Separator orientation="vertical" className="bg-primary" />
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="outline" size="icon">
+                <Button
+                  variant="outline"
+                  size="icon"
+                  aria-label={t("header.changeTheme")}
+                >
                   {theme === "light" ? (
                     <Moon
                       weight="regular"
@@ -182,7 +191,11 @@ export default function Header(): JSX.Element {
             </DropdownMenu>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="outline" size="icon">
+                <Button
+                  variant="outline"
+                  size="icon"
+                  aria-label={t("header.changeLanguage")}
+                >
                   <Translate
                     weight="regular"
                     size={16}
@@ -231,6 +244,7 @@ export default function Header(): JSX.Element {
                   variant="outline"
                   className="font-bold"
                   onClick={() => void signOut()}
+                  aria-label={t("header.signOut")}
                 >
                   <SignOut size={16} className="mr-2" />
                   {t("header.signOut")}
@@ -241,6 +255,7 @@ export default function Header(): JSX.Element {
                 variant="outline"
                 className="font-bold"
                 onClick={() => void signIn("discord")}
+                aria-label={t("header.signIn")}
               >
                 <DiscordLogo
                   size={24}

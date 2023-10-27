@@ -1,6 +1,8 @@
 import { type Session } from "next-auth";
 import { SessionProvider } from "next-auth/react";
 import { type AppType } from "next/app";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 import { api } from "@/utils/api";
 
@@ -22,6 +24,15 @@ const MyApp: AppType<{ session: Session | null }> = ({
   Component,
   pageProps: { session, ...pageProps },
 }) => {
+  const router = useRouter();
+
+  useEffect(() => {
+    const userLang = localStorage.getItem("lang");
+    if (userLang && router.locale !== userLang) {
+      void router.push(router.pathname, router.pathname, { locale: userLang });
+    }
+  });
+
   return (
     <SessionProvider session={session}>
       <ThemeProvider
