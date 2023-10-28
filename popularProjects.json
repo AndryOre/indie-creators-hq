@@ -1,0 +1,37 @@
+[
+  {
+    "logo": "https://www.twon.app/favicon.ico",
+    "name": "Twon",
+    "tagline": "Node-based AI tool for enhancing your Twitter & Threads post.",
+    "url": "https://www.twon.app/",
+    "productHuntSlug": "twon"
+  },
+  {
+    "logo": "https://skillai.io/favicon.ico",
+    "name": "SkillAI",
+    "tagline": "Generating learning paths using AI for any skill.",
+    "url": "https://skillai.io/",
+    "productHuntSlug": "skillai"
+  },
+  {
+    "logo": "https://subs-apps.web.app/assets/favicon.webp",
+    "name": "subs",
+    "tagline": "Put a stop to the subscription chaos! 🤩",
+    "url": "https://subs-apps.web.app/",
+    "productHuntSlug": "subs-3"
+  },
+  {
+    "logo": "https://harvest.whil.online/harvest.svg",
+    "name": "Harvest",
+    "tagline": "Unleash the power of color in your images",
+    "url": "https://harvest.whil.online/",
+    "productHuntSlug": "harvest-4"
+  },
+  {
+    "logo": "https://shine.whil.online/thumbnail.png",
+    "name": "Shine Lyrics",
+    "tagline": "Lyric translator for Spotify and YouTube Music",
+    "url": "https://shine.whil.online/",
+    "productHuntSlug": "shine-lyrics"
+  }
+]
