@@ -6,6 +6,8 @@ import Link from "next/link";
 import MainLayout from "@/components/layout/mainLayout";
 import { Button } from "@/components/ui/button";
 import { DiscordLogo } from "@phosphor-icons/react";
+import Carousel from "@/components/carousel";
+import PopularProjects from "@/components/popularProjects";
 
 const Home: NextPage = () => {
   const { t } = useTranslation("common");
@@ -93,6 +95,9 @@ const Home: NextPage = () => {
               </Button>
             </div>
           </Link>
+        </div>
+        <div className="py-24">
+          <PopularProjects />
         </div>
       </MainLayout>
     </>

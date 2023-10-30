@@ -25,6 +25,7 @@ import { Badge } from "@/components/ui/badge";
 import Spinner from "@/components/spinner";
 import ProductHuntLogo from "../../public/assets/product-hunt-logo.png";
 import Image from "next/image";
+import Carousel from "./carousel";
 
 interface Project {
   logo: string;
@@ -61,9 +62,9 @@ export default function PopularProjects(): JSX.Element {
   };
 
   return (
-    <div className="flex w-full gap-4">
+    <Carousel>
       {popularProjects.map((project: Project) => (
-        <Card key={project.name} className="h-fit w-full lg:w-96">
+        <Card key={project.name} className="h-fit w-full max-w-sm shrink-0">
           <CardHeader>
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
@@ -118,6 +119,6 @@ export default function PopularProjects(): JSX.Element {
           </CardFooter>
         </Card>
       ))}
-    </div>
+    </Carousel>
   );
 }
