@@ -60,7 +60,7 @@
 
 @layer utilities {
   .dot-pattern {
-    position: relative;
+    /* This is now being controlled with Tailwind CSS.*/
   }
 
   .dot-pattern::before {

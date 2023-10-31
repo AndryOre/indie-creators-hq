@@ -41,7 +41,7 @@ const MyApp: AppType<{ session: Session | null }> = ({
         enableSystem
         disableTransitionOnChange
       >
-        <main className={`${spaceGrotesk.variable} font-sans`}>
+        <main className={`${spaceGrotesk.variable} relative font-sans`}>
           <Component {...pageProps} />
         </main>
       </ThemeProvider>
