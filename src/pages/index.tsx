@@ -1,10 +1,12 @@
-import type { NextPage, GetStaticProps } from "next";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { useTranslation } from "next-i18next";
+import type { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
-import { MainLayout, Button } from "@/components";
+
+import { Button, MainLayout } from "@/components";
+
 import { DiscordLogo } from "@phosphor-icons/react";
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 const Home: NextPage = () => {
   const { t } = useTranslation("common");

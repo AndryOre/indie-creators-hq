@@ -1,41 +1,45 @@
-import { signIn, signOut, useSession } from "next-auth/react";
-import { useTranslation } from "next-i18next";
-import { useRouter } from "next/router";
-import { useTheme } from "next-themes";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
+
 import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
   Button,
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuTrigger,
   DropdownMenuLabel,
   DropdownMenuSeparator,
-  Separator,
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
+  DropdownMenuTrigger,
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
+  Separator,
 } from "@/components/ui";
+
+import IndieCreatorsHQDark from "../../public/assets/Indie_Creatos_HQ_Logo_Dark.svg";
+import IndieCreatorsHQLight from "../../public/assets/Indie_Creatos_HQ_Logo_Light.svg";
+
 import {
   DiscordLogo,
-  Sun,
-  Moon,
-  Translate,
-  List,
-  X,
-  Monitor,
   Gear,
+  List,
+  Monitor,
+  Moon,
   SignOut,
+  Sun,
+  Translate,
+  X,
 } from "@phosphor-icons/react";
-import IndieCreatorsHQLight from "../../public/assets/Indie_Creatos_HQ_Logo_Light.svg";
-import IndieCreatorsHQDark from "../../public/assets/Indie_Creatos_HQ_Logo_Dark.svg";
+import { signIn, signOut, useSession } from "next-auth/react";
+import { useTranslation } from "next-i18next";
+import { useTheme } from "next-themes";
 
 export default function Header(): JSX.Element {
   const { theme, setTheme } = useTheme();

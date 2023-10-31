@@ -1,17 +1,15 @@
-import { type Session } from "next-auth";
-import { SessionProvider } from "next-auth/react";
-import { type AppType } from "next/app";
-import { useRouter } from "next/router";
 import { useEffect } from "react";
 
-import { api } from "@/utils/api";
-
-import "@/styles/globals.css";
-
+import { type AppType } from "next/app";
 import { Space_Grotesk } from "next/font/google";
+import { useRouter } from "next/router";
 
 import { ThemeProvider } from "@/components";
+import "@/styles/globals.css";
+import { api } from "@/utils/api";
 
+import { type Session } from "next-auth";
+import { SessionProvider } from "next-auth/react";
 import { appWithTranslation } from "next-i18next";
 
 const spaceGrotesk = Space_Grotesk({

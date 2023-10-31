@@ -1,5 +1,5 @@
-import { useTranslation } from "next-i18next";
 import { Heart } from "@phosphor-icons/react";
+import { useTranslation } from "next-i18next";
 
 export default function Footer(): JSX.Element {
   const { t } = useTranslation("common");
