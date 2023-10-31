@@ -3,8 +3,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import Head from "next/head";
 import Link from "next/link";
-import MainLayout from "@/components/layout/mainLayout";
-import { Button } from "@/components/ui/button";
+import { MainLayout, Button } from "@/components";
 import { DiscordLogo } from "@phosphor-icons/react";
 
 const Home: NextPage = () => {

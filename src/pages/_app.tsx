@@ -10,7 +10,7 @@ import "@/styles/globals.css";
 
 import { Space_Grotesk } from "next/font/google";
 
-import { ThemeProvider } from "@/components/themeProvider";
+import { ThemeProvider } from "@/components";
 
 import { appWithTranslation } from "next-i18next";
 
