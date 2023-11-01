@@ -1,7 +1,7 @@
 import type { GetStaticProps, NextPage } from "next";
 import Link from "next/link";
 
-import { Button, MainLayout } from "@/components";
+import { Button, DottedPattern, MainLayout } from "@/components";
 
 import { DiscordLogo } from "@phosphor-icons/react";
 import { useTranslation } from "next-i18next";
@@ -12,7 +12,8 @@ const Home: NextPage = () => {
 
   return (
     <MainLayout>
-      <div className="flex flex-col items-center gap-8">
+      <DottedPattern className="-z-1 absolute" />
+      <div className="z-10 flex flex-col items-center gap-8">
         <div className="flex flex-col items-center gap-4 text-center">
           <div className="text-gradient text-5xl font-bold md:text-6xl xl:text-8xl">
             <div>{t("hero.puv.powerYour")}</div>
