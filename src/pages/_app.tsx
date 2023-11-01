@@ -33,15 +33,20 @@ const MyApp: AppType<{ session: Session | null }> = ({
 
   return (
     <SessionProvider session={session}>
+      <style jsx global>
+        {`
+          :root {
+            --font-space-grotesk: ${spaceGrotesk.style.fontFamily};
+          }
+        `}
+      </style>
       <ThemeProvider
         attribute="class"
         defaultTheme="system"
         enableSystem
         disableTransitionOnChange
       >
-        <main className={`${spaceGrotesk.variable} font-sans`}>
-          <Component {...pageProps} />
-        </main>
+        <Component {...pageProps} />
       </ThemeProvider>
     </SessionProvider>
   );
