@@ -41,7 +41,7 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import { useTranslation } from "next-i18next";
 import { useTheme } from "next-themes";
 
-export default function Header(): JSX.Element {
+export const Header = (): JSX.Element => {
   const { theme, setTheme } = useTheme();
 
   const router = useRouter();
@@ -326,4 +326,4 @@ export default function Header(): JSX.Element {
       )}
     </header>
   );
-}
+};
