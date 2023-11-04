@@ -25,7 +25,11 @@
     "cta": "Únete Ahora"
   },
   "popularProjects": {
-    "productHuntVotes": "Votos de Product Hunt",
+    "title": "Side Projects Destacados",
+    "desc": "Descubre proyectos sobresalientes de nuestra comunidad, reflejando innovación y pasión.",
+    "shareYourProject": "¡Comparte tu proyecto con nosotros!",
+    "joinNow": "¡Únete ya!",
+    "productHuntVotes": "Votos en Product Hunt",
     "comingSoon": "Próximamente"
   },
   "footer": {

@@ -25,6 +25,10 @@
     "cta": "Join Now"
   },
   "popularProjects": {
+    "title": "Featured Side Projects",
+    "desc": "Discover outstanding projects from our community, showcasing innovation and passion.",
+    "shareYourProject": "Share your project with us!",
+    "joinNow": "Join now!",
     "productHuntVotes": "Product Hunt Votes",
     "comingSoon": "Coming Soon"
   },
