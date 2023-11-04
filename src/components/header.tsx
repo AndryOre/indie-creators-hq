@@ -68,13 +68,9 @@ export default function Header(): JSX.Element {
     };
   }, [isMenuOpen]);
 
-  const menuBg = isMenuOpen ? "backdrop-blur-sm bg-background/80" : "";
-
   return (
     <header className="sticky top-0 z-50">
-      <div
-        className={`flex w-full flex-col items-center justify-between px-4 py-3 xl:flex-row xl:px-40 ${menuBg}`}
-      >
+      <div className="flex w-full flex-col items-center justify-between px-4 py-3 xl:flex-row xl:px-40 backdrop-blur-sm bg-background/80">
         <div className="flex w-full items-center justify-between xl:w-auto">
           <Link href="/">
             <Image
