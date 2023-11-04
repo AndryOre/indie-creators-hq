@@ -121,7 +121,7 @@ export function PopularProjects(): JSX.Element {
             </TooltipProvider>
             <Button>
               <ArrowUpRight className="mr-2 h-4 w-4" />
-              Use
+              {t("popularProjects.use")}
             </Button>
           </CardFooter>
         </Card>
