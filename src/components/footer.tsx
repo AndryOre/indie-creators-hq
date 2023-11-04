@@ -1,7 +1,7 @@
 import { Heart } from "@phosphor-icons/react";
 import { useTranslation } from "next-i18next";
 
-export default function Footer(): JSX.Element {
+export const Footer = (): JSX.Element => {
   const { t } = useTranslation("common");
 
   return (
@@ -18,4 +18,4 @@ export default function Footer(): JSX.Element {
       </a>
     </footer>
   );
-}
+};
