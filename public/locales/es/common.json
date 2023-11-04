@@ -24,6 +24,10 @@
     },
     "cta": "Únete Ahora"
   },
+  "popularProjects": {
+    "productHuntVotes": "Votos de Product Hunt",
+    "comingSoon": "Próximamente"
+  },
   "footer": {
     "madeWith": "Hecho con",
     "by": "por"
