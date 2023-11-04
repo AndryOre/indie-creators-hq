@@ -28,11 +28,11 @@ interface SpinnerProps {
   color?: string;
 }
 
-export default function Spinner({
+export const Spinner = ({
   className,
   size = SpinnerSize.base,
   color = "text-foreground",
-}: SpinnerProps): JSX.Element {
+}: SpinnerProps): JSX.Element => {
   const svgClass = cn("animate-spin", SpinnerSizes[size], color, className);
 
   return (
@@ -57,4 +57,4 @@ export default function Spinner({
       ></path>
     </svg>
   );
-}
+};
