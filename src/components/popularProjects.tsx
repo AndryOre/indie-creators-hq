@@ -119,10 +119,18 @@ export function PopularProjects(): JSX.Element {
                 </TooltipContent>
               </Tooltip>
             </TooltipProvider>
-            <Button>
-              <ArrowUpRight className="mr-2 h-4 w-4" />
-              {t("popularProjects.use")}
-            </Button>
+            <div className="dark:hidden">
+              <Button variant="secondary">
+                <ArrowUpRight className="mr-2 h-4 w-4" />
+                {t("popularProjects.use")}
+              </Button>
+            </div>
+            <div className="hidden dark:block">
+              <Button>
+                <ArrowUpRight className="mr-2 h-4 w-4" />
+                {t("popularProjects.use")}
+              </Button>
+            </div>
           </CardFooter>
         </Card>
       ))}

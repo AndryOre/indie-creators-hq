@@ -67,7 +67,9 @@ const Home: NextPage = () => {
             rel="noopener"
             target="_blank"
           >
-            <Button variant="link">{t("popularProjects.joinNow")}</Button>
+            <Button variant="link" className="text-secondary dark:text-primary">
+              {t("popularProjects.joinNow")}
+            </Button>
           </Link>
         </div>
       </div>
