@@ -6,3 +6,4 @@ export * from "./separator";
 export * from "./badge";
 export * from "./card";
 export * from "./tooltip";
+export * from "./accordion";

@@ -7,3 +7,4 @@ export * from "./dotPattern";
 export * from "./spinner";
 export * from "./carousel";
 export * from "./popularProjects";
+export * from "./faqs";

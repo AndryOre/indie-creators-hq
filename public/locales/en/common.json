@@ -1,5 +1,6 @@
 {
   "header": {
+    "cogote": "Papagayo",
     "signIn": "Sign in",
     "theme": "Theme",
     "light": "Light",
@@ -32,6 +33,32 @@
     "productHuntVotes": "Product Hunt Votes",
     "comingSoon": "Coming Soon",
     "use": "Use"
+  },
+  "faqs": {
+    "title": "Your Questions Answered",
+    "desc": "Curious or confused? No problem. Here, frequently asked questions receive clear and concise answers so you can join the community with confidence. If you have any questions, we are here to help clear them up. Ask away and advance on your journey with the community!",
+    "questions": {
+      "1": {
+        "question": "What is the Indie Creators HQ community?",
+        "answer": "The Indie Creators community is a space to build Side Projects together and showcase the talent of Hispanics to the world. It's a welcoming place for people of all levels of technological experience to collaborate, learn, and create."
+      },
+      "2": {
+        "question": "Who started this community?",
+        "answer": "The initiative of the community was started by Serudda, who is convinced that together we will build great things."
+      },
+      "3": {
+        "question": "How can I be part of the Indie Creators HQ community?",
+        "answer": "To be part of our community, there are no specific requirements, you just need to have a passion or curiosity for creating. Regardless of your experience or current role in the tech industry, you can join us through our Discord."
+      },
+      "4": {
+        "question": "What do I need to join the community's Discord?",
+        "answer": "Simply follow the link to our Discord, nicknamed 'Headquarters', and join. There, ideation, planning, and everything related to Side Projects takes place."
+      },
+      "5": {
+        "question": "What are the benefits of contributing to the community?",
+        "answer": "By contributing to the community, you will gain experience working on real projects, you can enhance your CV, and have the opportunity to grow alongside an expanding community."
+      }
+    }
   },
   "footer": {
     "madeWith": "Made with",

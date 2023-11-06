@@ -33,6 +33,32 @@
     "comingSoon": "Próximamente",
     "use": "Usar"
   },
+  "faqs": {
+    "title": "Tus Dudas Resueltas",
+    "desc": "¿Curioso o confundido? No hay problema. Aquí, las preguntas frecuentes reciben respuestas claras y concisas para que te integres a la comunidad con confianza. Si te surge alguna duda, estamos aquí para ayudarte a despejarla. ¡Pregunta y avanza en tu camino con la comunidad!",
+    "questions": {
+      "1": {
+        "question": "¿Qué es la comunidad de Indie Creators HQ?",
+        "answer": "La comunidad de Creadores Independientes es un espacio para construir Side Projects en conjunto y mostrar al mundo el talento de los Hispanos. Es un lugar que acoge a personas de todos los niveles de experiencia en el ámbito tecnológico para colaborar, aprender y crear."
+      },
+      "2": {
+        "question": "¿Quién inició esta comunidad?",
+        "answer": "La iniciativa de la comunidad comenzó por Serudda, quien está convencido de que juntos vamos a construir grandes cosas."
+      },
+      "3": {
+        "question": "¿Cómo puedo ser parte de la comunidad de Indie Creators HQ?",
+        "answer": "Para ser parte de nuestra comunidad no se requieren condiciones específicas, solo necesitas tener pasión o curiosidad por crear. Independientemente de tu experiencia o rol actual en la industria tech, puedes unirte a nosotros a través de nuestro Discord."
+      },
+      "4": {
+        "question": "¿Qué necesito para unirme al Discord de la comunidad?",
+        "answer": "Simplemente sigue el enlace a nuestro Discord, apodado 'Cuartel General', y únete. Allí se lleva a cabo la ideación, planificación y todo lo relacionado con los Side Projects."
+      },
+      "5": {
+        "question": "¿Cuáles son los beneficios de contribuir a la comunidad?",
+        "answer": "Contribuyendo a la comunidad ganarás experiencia trabajando en proyectos reales, podrás potenciar tu CV y tendrás la oportunidad de crecer junto a una comunidad en expansión."
+      }
+    }
+  },
   "footer": {
     "madeWith": "Hecho con",
     "by": "por"
