@@ -2,6 +2,7 @@ import type { GetStaticProps, NextPage } from "next";
 import Link from "next/link";
 
 import {
+  BenefitShowcase,
   Button,
   DottedPattern,
   MainLayout,
@@ -49,6 +50,17 @@ const Home: NextPage = () => {
             </div>
           </Link>
         </div>
+      </div>
+      <div className="items-center flex flex-col justify-center gap-16 py-16">
+        <div className="flex flex-col gap-4 text-center">
+          <div className="text-3xl font-bold text-secondary dark:text-primary md:text-4xl xl:text-5xl">
+            {t("communityBenefits.title")}
+          </div>
+          <div className="text-muted-foreground">
+            {t("communityBenefits.desc")}
+          </div>
+        </div>
+        <BenefitShowcase />
       </div>
       <div className="items-center flex flex-col justify-center gap-16 py-16">
         <div className="flex flex-col gap-4 text-center">

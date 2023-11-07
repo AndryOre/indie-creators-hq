@@ -24,6 +24,19 @@
     },
     "cta": "Join Now"
   },
+  "communityBenefits": {
+    "title": "What do we offer as a community?",
+    "desc": "A space of collaboration, growth, and fun, where every idea and project finds its place. Discover what makes us special...",
+    "projectReviewsTitle": "Live Project Reviews",
+    "projectReviewsDesc": "Under the critical eye of the community, discover how to take your side project to the next level.",
+    "projectReviewsTag": "Real-Time Feedback",
+    "launchBoostTitle": "Boost in your Launches",
+    "launchBoostDesc": "We come together to empower the most promising projects of our community and ensure they reach their full potential.",
+    "launchBoostTag": "Growth Acceleration",
+    "activeDiscordTitle": "Active Community on Discord",
+    "activeDiscordDesc": "A place to share doubts, promote projects, and of course, enjoy the best memes. Learn, share, and have fun with us!",
+    "activeDiscordTag": "Continuous Connection"
+  },
   "popularProjects": {
     "title": "Featured Side Projects",
     "desc": "Discover outstanding projects from our community, showcasing innovation and passion.",

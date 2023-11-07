@@ -24,6 +24,19 @@
     },
     "cta": "Únete Ahora"
   },
+  "communityBenefits": {
+    "title": "¿Qué ofrecemos como comunidad?",
+    "desc": "Un espacio de colaboración, crecimiento y diversión, donde cada idea y proyecto encuentra su lugar. Conoce lo que nos hace especiales...",
+    "projectReviewsTitle": "Revisiones En Vivo de Proyectos",
+    "projectReviewsDesc": "Bajo el ojo crítico de la comunidad, descubre cómo llevar tu side project al siguiente nivel.",
+    "projectReviewsTag": "Feedback en Tiempo Real",
+    "launchBoostTitle": "Impulso en tus Lanzamientos",
+    "launchBoostDesc": "Nos unimos para potenciar los proyectos más prometedores de nuestra comunidad y lograr que alcancen su máximo potencial.",
+    "launchBoostTag": "Aceleración de Crecimiento",
+    "activeDiscordTitle": "Comunidad Activa en Discord",
+    "activeDiscordDesc": "Un lugar para compartir dudas, promocionar proyectos y, por supuesto, disfrutar de los mejores memes. ¡Aprende, comparte y diviértete con nosotros!",
+    "activeDiscordTag": "Conexión Continua"
+  },
   "popularProjects": {
     "title": "Side Projects Destacados",
     "desc": "Descubre proyectos sobresalientes de nuestra comunidad, reflejando innovación y pasión.",
