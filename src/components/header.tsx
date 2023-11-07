@@ -105,7 +105,7 @@ export const Header = (): JSX.Element => {
         </div>
         <nav className="hidden items-center gap-4 font-medium xl:flex">
           <div className="flex gap-4">
-            <div>
+            {/*             <div>
               {sessionData ? (
                 <DropdownMenu>
                   <DropdownMenuTrigger>
@@ -154,7 +154,7 @@ export const Header = (): JSX.Element => {
                 </Button>
               )}
             </div>
-            <Separator orientation="vertical" className="bg-primary" />
+            <Separator orientation="vertical" className="bg-primary" /> */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button
@@ -218,7 +218,7 @@ export const Header = (): JSX.Element => {
       {isMenuOpen && (
         <div className="fixed left-0 top-[20] z-50 flex h-full w-full flex-col gap-6 bg-background/80 px-4 py-2 backdrop-blur-sm lg:px-16 xl:hidden">
           <nav className="flex flex-col gap-4">
-            {sessionData ? (
+            {/* {sessionData ? (
               <div className="flex flex-col gap-4">
                 <ul>
                   <li className="flex items-center justify-between border-b-[1px] py-2">
@@ -264,7 +264,7 @@ export const Header = (): JSX.Element => {
                 />
                 {t("header.signIn")}
               </Button>
-            )}
+            )} */}
             <ul>
               <li className="flex items-center justify-between border-b-[1px] py-2">
                 {t("header.theme")}
