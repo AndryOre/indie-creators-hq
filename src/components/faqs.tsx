@@ -23,7 +23,9 @@ export const Faqs = (): JSX.Element => {
       <Accordion type="single" collapsible>
         {Object.keys(faqs).map((key) => (
           <AccordionItem key={key} value={`item-${key}`}>
-            <AccordionTrigger>{faqs[key]?.question}</AccordionTrigger>
+            <AccordionTrigger className="text-start">
+              {faqs[key]?.question}
+            </AccordionTrigger>
             <AccordionContent>{faqs[key]?.answer}</AccordionContent>
           </AccordionItem>
         ))}
