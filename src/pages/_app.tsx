@@ -1,17 +1,15 @@
-import { type Session } from "next-auth";
-import { SessionProvider } from "next-auth/react";
-import { type AppType } from "next/app";
-import { useRouter } from "next/router";
 import { useEffect } from "react";
 
+import { type AppType } from "next/app";
+import { Space_Grotesk } from "next/font/google";
+import { useRouter } from "next/router";
+
+import { ThemeProvider } from "@/components";
+import "@/styles/globals.css";
 import { api } from "@/utils/api";
 
-import "@/styles/globals.css";
-
-import { Space_Grotesk } from "next/font/google";
-
-import { ThemeProvider } from "@/components/themeProvider";
-
+import { type Session } from "next-auth";
+import { SessionProvider } from "next-auth/react";
 import { appWithTranslation } from "next-i18next";
 
 const spaceGrotesk = Space_Grotesk({
@@ -35,15 +33,20 @@ const MyApp: AppType<{ session: Session | null }> = ({
 
   return (
     <SessionProvider session={session}>
+      <style jsx global>
+        {`
+          :root {
+            --font-space-grotesk: ${spaceGrotesk.style.fontFamily};
+          }
+        `}
+      </style>
       <ThemeProvider
         attribute="class"
         defaultTheme="system"
         enableSystem
         disableTransitionOnChange
       >
-        <main className={`${spaceGrotesk.variable} font-sans`}>
-          <Component {...pageProps} />
-        </main>
+        <Component {...pageProps} />
       </ThemeProvider>
     </SessionProvider>
   );

@@ -1,43 +1,47 @@
-import { signIn, signOut, useSession } from "next-auth/react";
-import { useTranslation } from "next-i18next";
-import { useRouter } from "next/router";
-import { useTheme } from "next-themes";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+
 import Image from "next/image";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { useRouter } from "next/router";
+
 import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+  Button,
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuTrigger,
   DropdownMenuLabel,
   DropdownMenuSeparator,
-} from "@/components/ui/dropdown-menu";
-import { Separator } from "@/components/ui/separator";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import {
+  DropdownMenuTrigger,
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
+  Separator,
+} from "@/components/ui";
+
+import IndieCreatorsHQDark from "../../public/assets/Indie_Creatos_HQ_Logo_Dark.svg";
+import IndieCreatorsHQLight from "../../public/assets/Indie_Creatos_HQ_Logo_Light.svg";
+
 import {
   DiscordLogo,
-  Sun,
-  Moon,
-  Translate,
-  List,
-  X,
-  Monitor,
   Gear,
+  List,
+  Monitor,
+  Moon,
   SignOut,
+  Sun,
+  Translate,
+  X,
 } from "@phosphor-icons/react";
-import IndieCreatorsHQLight from "../../public/assets/Indie_Creatos_HQ_Logo_Light.svg";
-import IndieCreatorsHQDark from "../../public/assets/Indie_Creatos_HQ_Logo_Dark.svg";
+import { signIn, signOut, useSession } from "next-auth/react";
+import { useTranslation } from "next-i18next";
+import { useTheme } from "next-themes";
 
-export default function Header(): JSX.Element {
+export const Header = (): JSX.Element => {
   const { theme, setTheme } = useTheme();
 
   const router = useRouter();
@@ -64,13 +68,9 @@ export default function Header(): JSX.Element {
     };
   }, [isMenuOpen]);
 
-  const menuBg = isMenuOpen ? "backdrop-blur-sm bg-background/80" : "";
-
   return (
     <header className="sticky top-0 z-50">
-      <div
-        className={`flex w-full flex-col items-center justify-between px-4 py-3 xl:flex-row xl:px-40 ${menuBg}`}
-      >
+      <div className="flex w-full flex-col items-center justify-between px-4 py-3 xl:flex-row xl:px-40 backdrop-blur-sm bg-background/80">
         <div className="flex w-full items-center justify-between xl:w-auto">
           <Link href="/">
             <Image
@@ -105,7 +105,7 @@ export default function Header(): JSX.Element {
         </div>
         <nav className="hidden items-center gap-4 font-medium xl:flex">
           <div className="flex gap-4">
-            <div>
+            {/*             <div>
               {sessionData ? (
                 <DropdownMenu>
                   <DropdownMenuTrigger>
@@ -154,7 +154,7 @@ export default function Header(): JSX.Element {
                 </Button>
               )}
             </div>
-            <Separator orientation="vertical" className="bg-primary" />
+            <Separator orientation="vertical" className="bg-primary" /> */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button
@@ -218,7 +218,7 @@ export default function Header(): JSX.Element {
       {isMenuOpen && (
         <div className="fixed left-0 top-[20] z-50 flex h-full w-full flex-col gap-6 bg-background/80 px-4 py-2 backdrop-blur-sm lg:px-16 xl:hidden">
           <nav className="flex flex-col gap-4">
-            {sessionData ? (
+            {/* {sessionData ? (
               <div className="flex flex-col gap-4">
                 <ul>
                   <li className="flex items-center justify-between border-b-[1px] py-2">
@@ -264,7 +264,7 @@ export default function Header(): JSX.Element {
                 />
                 {t("header.signIn")}
               </Button>
-            )}
+            )} */}
             <ul>
               <li className="flex items-center justify-between border-b-[1px] py-2">
                 {t("header.theme")}
@@ -326,4 +326,4 @@ export default function Header(): JSX.Element {
       )}
     </header>
   );
-}
+};

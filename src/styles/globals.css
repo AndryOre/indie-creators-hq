@@ -59,41 +59,20 @@
 }
 
 @layer utilities {
-  .dot-pattern {
-    position: relative;
-  }
-
-  .dot-pattern::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: -1;
-    background-position: center;
-    background-repeat: repeat;
-    background-color: #fff;
-    background-image: radial-gradient(
-        circle,
-        rgba(255, 255, 255, 0) 0%,
-        rgba(255, 255, 255, 1) 85%
-      ),
-      url("../../public/assets/pattern-light.svg");
-    opacity: 0.25;
-  }
-
-  .dark .dot-pattern::before {
-    background-color: #0c0a09;
-    background-image: radial-gradient(
-        circle,
-        rgba(12, 10, 9, 0) 0%,
-        rgba(12, 10, 9, 1) 85%
-      ),
-      url("../../public/assets/pattern-dark.svg");
-  }
-
   .text-gradient {
     @apply bg-gradient-to-b from-secondary to-secondary-foreground bg-clip-text text-transparent dark:from-primary dark:to-primary-foreground;
   }
+}
+
+.dotted-background {
+  background-image: radial-gradient(
+    circle,
+    var(--tw-gradient-stops) var(--dots-size),
+    var(--tw-gradient-stops) var(--dots-size),
+    transparent var(--dots-size),
+    transparent 100%
+  );
+
+  background-size: var(--dots-separation);
+  mask-image: var(--mask-image);
 }

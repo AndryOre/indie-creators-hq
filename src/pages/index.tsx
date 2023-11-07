@@ -1,70 +1,27 @@
-import type { NextPage, GetStaticProps } from "next";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { useTranslation } from "next-i18next";
-import Head from "next/head";
+import type { GetStaticProps, NextPage } from "next";
 import Link from "next/link";
-import MainLayout from "@/components/layout/mainLayout";
-import { Button } from "@/components/ui/button";
+
+import {
+  BenefitShowcase,
+  Button,
+  DottedPattern,
+  Faqs,
+  MainLayout,
+  PopularProjects,
+} from "@/components";
+
 import { DiscordLogo } from "@phosphor-icons/react";
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 const Home: NextPage = () => {
   const { t } = useTranslation("common");
 
   return (
-    <>
-      <Head>
-        <title>Indie Creators HQ</title>
-        <meta
-          name="description"
-          content="Únete a nuestra comunidad de Creadores Independientes y construye proyectos innovadores. Descubre tu potencial creativo con nosotros."
-        />
-        <link rel="icon" href="/favicon.svg" />
-
-        <meta
-          name="keywords"
-          content="Creadores Independientes, Comunidad, Proyectos Innovadores, Hispanos, Colaboración"
-        />
-        <meta
-          name="news_keywords"
-          content="Creadores Independientes, Comunidad, Proyectos Innovadores, Hispanos, Colaboración"
-        />
-
-        <meta name="author" content="Serudda" />
-
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="Indie Creators HQ" />
-        <meta
-          property="og:description"
-          content="Únete a nuestra comunidad de Creadores Independientes y construye proyectos innovadores. Descubre tu potencial creativo con nosotros."
-        />
-        <meta
-          property="og:url"
-          content="https://indie-creators-hq.vercel.app"
-        />
-        <meta
-          property="og:image"
-          content="https://res.cloudinary.com/dhwxnbnaj/image/upload/v1697662035/Indie%20Creatos%20HQ/Indie_Creators_HQ_t48m20.png"
-        />
-        <meta property="og:site_name" content="Indie Creators HQ" />
-
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:site"
-          content="https://indie-creators-hq.vercel.app"
-        />
-        <meta name="twitter:creator" content="Serudda" />
-        <meta name="twitter:title" content="Indie Creators HQ" />
-        <meta
-          name="twitter:description"
-          content="Únete a nuestra comunidad de Creadores Independientes y construye proyectos innovadores. Descubre tu potencial creativo con nosotros."
-        />
-        <meta
-          name="twitter:image"
-          content="https://res.cloudinary.com/dhwxnbnaj/image/upload/v1697662035/Indie%20Creatos%20HQ/Indie_Creators_HQ_t48m20.png"
-        />
-      </Head>
-      <MainLayout>
-        <div className="flex flex-col items-center gap-8">
+    <MainLayout>
+      <div className="flex h-[calc(100vh-72px)] xl:h-[calc(100vh-88px)] justify-center items-center">
+        <DottedPattern className="-z-1 absolute" />
+        <div className="z-10 flex flex-col items-center gap-8">
           <div className="flex flex-col items-center gap-4 text-center">
             <div className="text-gradient text-5xl font-bold md:text-6xl xl:text-8xl">
               <div>{t("hero.puv.powerYour")}</div>
@@ -94,8 +51,55 @@ const Home: NextPage = () => {
             </div>
           </Link>
         </div>
-      </MainLayout>
-    </>
+      </div>
+      <div className="items-center flex flex-col justify-center gap-16 py-16">
+        <div className="flex flex-col gap-4 text-center">
+          <div className="text-3xl font-bold text-secondary dark:text-primary md:text-4xl xl:text-5xl">
+            {t("communityBenefits.title")}
+          </div>
+          <div className="text-muted-foreground">
+            {t("communityBenefits.desc")}
+          </div>
+        </div>
+        <BenefitShowcase />
+      </div>
+      <div className="items-center flex flex-col justify-center gap-16 py-16">
+        <div className="flex flex-col gap-4 text-center">
+          <div className="text-3xl font-bold text-secondary dark:text-primary md:text-4xl xl:text-5xl">
+            {t("popularProjects.title")}
+          </div>
+          <div className="text-muted-foreground">
+            {t("popularProjects.desc")}
+          </div>
+        </div>
+        <PopularProjects />
+        <div className="flex flex-col items-center justify-center">
+          {t("popularProjects.shareYourProject")}
+          <Link
+            href="https://discord.gg/indie-creators-hq-by-serudda-972567584580984852"
+            rel="noopener"
+            target="_blank"
+          >
+            <Button variant="link" className="text-secondary dark:text-primary">
+              {t("popularProjects.joinNow")}
+            </Button>
+          </Link>
+        </div>
+      </div>
+      <div className="flex justify-between flex-col lg:flex-row gap-16 py-16 ">
+        <div className="w-full lg:w-2/5 gap-4 flex flex-col">
+          <div className="text-3xl font-bold text-secondary dark:text-primary lg:text-4xl xl:text-5xl">
+            {t("faqs.title")}
+          </div>
+          <div className="text-muted-foreground text-justify">
+            {t("faqs.desc")}
+          </div>
+        </div>
+        <div className="w-full lg:w-3/5">
+          <Faqs />
+        </div>
+      </div>
+    </MainLayout>
   );
 };
 

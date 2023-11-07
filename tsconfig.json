@@ -30,7 +30,8 @@
     "**/*.cjs",
     "**/*.mjs",
     ".next/types/**/*.ts",
-    "next-i18next.config.js"
+    "next-i18next.config.js",
+    "commitlint.config.js"
   ],
   "exclude": ["node_modules"]
 }
