@@ -5,6 +5,7 @@ import {
   BenefitShowcase,
   Button,
   DottedPattern,
+  Faqs,
   MainLayout,
   PopularProjects,
 } from "@/components";
@@ -83,6 +84,19 @@ const Home: NextPage = () => {
               {t("popularProjects.joinNow")}
             </Button>
           </Link>
+        </div>
+      </div>
+      <div className="flex justify-between flex-col lg:flex-row gap-16 py-16 ">
+        <div className="w-full lg:w-2/5 gap-4 flex flex-col">
+          <div className="text-3xl font-bold text-secondary dark:text-primary lg:text-4xl xl:text-5xl">
+            {t("faqs.title")}
+          </div>
+          <div className="text-muted-foreground text-justify">
+            {t("faqs.desc")}
+          </div>
+        </div>
+        <div className="w-full lg:w-3/5">
+          <Faqs />
         </div>
       </div>
     </MainLayout>
