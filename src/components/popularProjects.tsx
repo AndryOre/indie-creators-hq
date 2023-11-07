@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import {
   Avatar,
@@ -118,19 +119,21 @@ export function PopularProjects(): JSX.Element {
                   <div>{t("popularProjects.comingSoon")}</div>
                 </TooltipContent>
               </Tooltip>
-            </TooltipProvider>
-            <div className="dark:hidden">
-              <Button variant="secondary">
-                <ArrowUpRight className="mr-2 h-4 w-4" />
-                {t("popularProjects.use")}
-              </Button>
-            </div>
-            <div className="hidden dark:block">
-              <Button>
-                <ArrowUpRight className="mr-2 h-4 w-4" />
-                {t("popularProjects.use")}
-              </Button>
-            </div>
+            </TooltipProvider>{" "}
+            <Link href={project.url} rel="noopener" target="_blank">
+              <div className="dark:hidden">
+                <Button variant="secondary">
+                  <ArrowUpRight className="mr-2 h-4 w-4" />
+                  {t("popularProjects.use")}
+                </Button>
+              </div>
+              <div className="hidden dark:block">
+                <Button>
+                  <ArrowUpRight className="mr-2 h-4 w-4" />
+                  {t("popularProjects.use")}
+                </Button>
+              </div>
+            </Link>
           </CardFooter>
         </Card>
       ))}
