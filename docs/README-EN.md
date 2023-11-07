@@ -29,6 +29,14 @@
 - [![ShadcnUI][ShadcnUI]][ShadcnUI-url]
 - [![i18next][i18next]][i18next-url]
 
+## 🤝 Contributors
+
+We value and recognize each contributor who has helped Indie Creators HQ grow and thrive. A huge thank you to all the amazing people who have contributed their time, energy, and skills to this project.
+
+<a href="https://github.com/AndryOre/indie-creators-hq/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=AndryOre/indie-creators-hq" />
+</a>
+
 ## 📜 License
 
 This project is licensed under the MIT License. See [LICENSE](CODE_OF_CONDUCT.md) for more information.
@@ -39,7 +47,7 @@ This project is licensed under the MIT License. See [LICENSE](CODE_OF_CONDUCT.md
 [TypeScript-url]: https://www.typescriptlang.org/
 [tRPC]: https://img.shields.io/badge/tRPC-2596BE.svg?style=for-the-badge&logo=tRPC&logoColor=white
 [tRPC-url]: https://trpc.io
-[Prisma]:https://img.shields.io/badge/Prisma-2D3748.svg?style=for-the-badge&logo=Prisma&logoColor=white
+[Prisma]: https://img.shields.io/badge/Prisma-2D3748.svg?style=for-the-badge&logo=Prisma&logoColor=white
 [Prisma-url]: https://prisma.io
 [Tailwind]: https://img.shields.io/badge/Tailwind%20CSS-06B6D4.svg?style=for-the-badge&logo=Tailwind-CSS&logoColor=white
 [Tailwind-url]: https://tailwindcss.com/
