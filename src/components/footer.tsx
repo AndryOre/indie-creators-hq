@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { Heart } from "@phosphor-icons/react";
 import { useTranslation } from "next-i18next";
 
@@ -9,13 +11,14 @@ export const Footer = (): JSX.Element => {
       <div>{t("footer.madeWith")}</div>
       <Heart weight="fill" className="h-5 w-5 text-red-500 lg:h-6 lg:w-6" />
       <div>{t("footer.by")}</div>
-      <a
+      <Link
         href="https://github.com/Indie-Creator-Community"
+        rel="noopener"
         target="_blank"
-        rel="noreferrer"
+        className="hover:underline"
       >
         Indie Creators HQ
-      </a>
+      </Link>
     </footer>
   );
 };
