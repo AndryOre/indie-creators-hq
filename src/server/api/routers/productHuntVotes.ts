@@ -1,7 +1,6 @@
 import { env } from "@/env.mjs";
 import { createTRPCRouter, publicProcedure } from "@/server/api/trpc";
 
-import fetch from "node-fetch";
 import { z } from "zod";
 
 interface PostResponse {
