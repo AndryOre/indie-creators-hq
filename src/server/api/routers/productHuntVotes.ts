@@ -14,10 +14,38 @@ interface PostResponse {
   };
 }
 
+interface Cache {
+  data:
+    | string
+    | {
+        id: string;
+        name: string;
+        votesCount: number;
+        slug: string;
+      }
+    | null;
+  timestamp: Date | null;
+}
+
+let cache: Cache = {
+  data: null,
+  timestamp: null,
+};
+
 export const productHuntVotes = createTRPCRouter({
   getBySlug: publicProcedure
     .input(z.object({ slug: z.string() }))
     .query(async ({ input }) => {
+      const now = new Date();
+
+      if (
+        cache.data &&
+        cache.timestamp &&
+        now.getTime() - cache.timestamp.getTime() < 24 * 60 * 60 * 1000
+      ) {
+        return cache.data;
+      }
+
       const query = `
         query {
           post(slug: "${input.slug}") {
@@ -44,11 +72,12 @@ export const productHuntVotes = createTRPCRouter({
 
         const data = (await response.json()) as PostResponse;
 
-        if (data.data.post === null) {
-          return "Post not found";
-        }
+        cache = {
+          data: data.data.post ? data.data.post : "Post not found",
+          timestamp: now,
+        };
 
-        return data.data.post;
+        return cache.data;
       } catch (error) {
         if (error instanceof Error) {
           throw new Error(error.message);
