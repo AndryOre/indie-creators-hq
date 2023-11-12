@@ -1,7 +1,6 @@
 import { env } from "@/env.mjs";
 import { createTRPCRouter, publicProcedure } from "@/server/api/trpc";
 
-import fetch from "node-fetch";
 import { z } from "zod";
 
 interface PostResponse {
@@ -15,10 +14,35 @@ interface PostResponse {
   };
 }
 
+interface CacheEntry {
+  data:
+    | string
+    | {
+        id: string;
+        name: string;
+        votesCount: number;
+        slug: string;
+      }
+    | null;
+  timestamp: Date;
+}
+
+const cache: Record<string, CacheEntry> = {};
+
 export const productHuntVotes = createTRPCRouter({
   getBySlug: publicProcedure
     .input(z.object({ slug: z.string() }))
     .query(async ({ input }) => {
+      const now = new Date();
+      const slugCache = cache[input.slug];
+
+      if (
+        slugCache?.timestamp &&
+        now.getTime() - slugCache.timestamp.getTime() < 24 * 60 * 60 * 1000
+      ) {
+        return slugCache.data;
+      }
+
       const query = `
         query {
           post(slug: "${input.slug}") {
@@ -45,11 +69,12 @@ export const productHuntVotes = createTRPCRouter({
 
         const data = (await response.json()) as PostResponse;
 
-        if (data.data.post === null) {
-          return "Post not found";
-        }
+        cache[input.slug] = {
+          data: data.data.post ? data.data.post : "Post not found",
+          timestamp: now,
+        };
 
-        return data.data.post;
+        return cache[input.slug]?.data;
       } catch (error) {
         if (error instanceof Error) {
           throw new Error(error.message);
