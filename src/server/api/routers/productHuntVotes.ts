@@ -14,7 +14,7 @@ interface PostResponse {
   };
 }
 
-interface Cache {
+interface CacheEntry {
   data:
     | string
     | {
@@ -24,26 +24,23 @@ interface Cache {
         slug: string;
       }
     | null;
-  timestamp: Date | null;
+  timestamp: Date;
 }
 
-let cache: Cache = {
-  data: null,
-  timestamp: null,
-};
+const cache: Record<string, CacheEntry> = {};
 
 export const productHuntVotes = createTRPCRouter({
   getBySlug: publicProcedure
     .input(z.object({ slug: z.string() }))
     .query(async ({ input }) => {
       const now = new Date();
+      const slugCache = cache[input.slug];
 
       if (
-        cache.data &&
-        cache.timestamp &&
-        now.getTime() - cache.timestamp.getTime() < 24 * 60 * 60 * 1000
+        slugCache?.timestamp &&
+        now.getTime() - slugCache.timestamp.getTime() < 24 * 60 * 60 * 1000
       ) {
-        return cache.data;
+        return slugCache.data;
       }
 
       const query = `
@@ -72,12 +69,12 @@ export const productHuntVotes = createTRPCRouter({
 
         const data = (await response.json()) as PostResponse;
 
-        cache = {
+        cache[input.slug] = {
           data: data.data.post ? data.data.post : "Post not found",
           timestamp: now,
         };
 
-        return cache.data;
+        return cache[input.slug]?.data;
       } catch (error) {
         if (error instanceof Error) {
           throw new Error(error.message);
