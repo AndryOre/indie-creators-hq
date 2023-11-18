@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { Badge } from "@/components/";
+import { Badge, DiscordImg } from "@/components/";
 
 import { useTranslation } from "next-i18next";
 
@@ -96,22 +96,7 @@ export const BenefitShowcase = () => {
           </div>
         </div>
         <div className="md:w-1/2">
-          <Image
-            src={`${imageHost}Discord___Dark_ezldhd`}
-            alt="Product Hunt"
-            width="0"
-            height="0"
-            sizes="100vw"
-            className="w-auto h-auto dark:block hidden scale-110"
-          />
-          <Image
-            src={`${imageHost}Discord___Light_thscuk`}
-            alt="Product Hunt"
-            width="0"
-            height="0"
-            sizes="100vw"
-            className="w-auto h-auto dark:hidden scale-110"
-          />
+          <DiscordImg />
         </div>
       </div>
     </div>
