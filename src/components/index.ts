@@ -10,3 +10,4 @@ export * from "./popularProjects";
 export * from "./benefitShowcase";
 export * from "./faqs";
 export * from "./discordImg";
+export * from "./shimmer";
