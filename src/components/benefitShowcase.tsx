@@ -2,6 +2,8 @@ import Image from "next/image";
 
 import { Badge, DiscordImg } from "@/components/";
 
+import { Shimmer } from "./shimmer";
+
 import { useTranslation } from "next-i18next";
 
 export const BenefitShowcase = () => {
@@ -14,12 +16,14 @@ export const BenefitShowcase = () => {
     <div className="flex flex-col gap-8">
       <div className="flex flex-col md:flex-row gap-8 w-full items-center">
         <div className="md:w-1/2 flex flex-col gap-2">
-          <Badge
-            variant="outline"
-            className="w-fit shadow-[0_0_4px_0px_#6066af] dark:shadow-[0_0_4px_0px_#ffff66]"
-          >
-            {t("communityBenefits.projectReviewsTag")}
-          </Badge>
+          <Shimmer className="rounded-xl">
+            <Badge
+              variant="outline"
+              className="w-fit shadow-[0_0_4px_0px_#6066af] dark:shadow-[0_0_4px_0px_#ffff66]"
+            >
+              {t("communityBenefits.projectReviewsTag")}
+            </Badge>
+          </Shimmer>
           <div className="font-medium text-4xl">
             {t("communityBenefits.projectReviewsTitle")}
           </div>
@@ -29,7 +33,7 @@ export const BenefitShowcase = () => {
         </div>
         <div className="md:w-1/2">
           <Image
-            src={`${imageHost}Side_Project_Review___Dark_p059sm`}
+            src="/assets/Side Project Review-Dark.svg"
             alt="Product Hunt"
             width="0"
             height="0"
@@ -37,7 +41,7 @@ export const BenefitShowcase = () => {
             className="w-auto h-auto dark:block hidden"
           />
           <Image
-            src={`${imageHost}Side_Project_Review___Light_hdsn7c`}
+            src="/assets/Side Project Review-Light.svg"
             alt="Product Hunt"
             width="0"
             height="0"
@@ -48,12 +52,14 @@ export const BenefitShowcase = () => {
       </div>
       <div className="flex flex-col md:flex-row-reverse gap-8 w-full items-center">
         <div className="md:w-1/2 flex flex-col gap-2">
-          <Badge
-            variant="outline"
-            className="w-fit shadow-[0_0_4px_0px_#6066af] dark:shadow-[0_0_4px_0px_#ffff66]"
-          >
-            {t("communityBenefits.launchBoostTag")}
-          </Badge>
+          <Shimmer className="rounded-xl">
+            <Badge
+              variant="outline"
+              className="w-fit shadow-[0_0_4px_0px_#6066af] dark:shadow-[0_0_4px_0px_#ffff66]"
+            >
+              {t("communityBenefits.launchBoostTag")}
+            </Badge>
+          </Shimmer>
           <div className="font-medium text-4xl">
             {t("communityBenefits.launchBoostTitle")}
           </div>
@@ -82,12 +88,15 @@ export const BenefitShowcase = () => {
       </div>
       <div className="flex flex-col md:flex-row gap-8 w-full items-center">
         <div className="md:w-1/2 flex flex-col gap-2">
-          <Badge
-            variant="outline"
-            className="w-fit shadow-[0_0_4px_0px_#6066af] dark:shadow-[0_0_4px_0px_#ffff66]"
-          >
-            {t("communityBenefits.activeDiscordTag")}
-          </Badge>
+          <Shimmer className="rounded-xl">
+            <Badge
+              variant="outline"
+              className="w-fit shadow-[0_0_4px_0px_#6066af] dark:shadow-[0_0_4px_0px_#ffff66]"
+            >
+              {t("communityBenefits.activeDiscordTag")}
+            </Badge>
+          </Shimmer>
+
           <div className="font-medium text-4xl">
             {t("communityBenefits.activeDiscordTitle")}
           </div>
