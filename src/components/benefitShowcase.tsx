@@ -1,8 +1,6 @@
 import Image from "next/image";
 
-import { Badge, DiscordImg } from "@/components/";
-
-import { Shimmer } from "./shimmer";
+import { Badge, DiscordImg, Shimmer, SpReviewImg } from "@/components";
 
 import { useTranslation } from "next-i18next";
 
@@ -32,22 +30,7 @@ export const BenefitShowcase = () => {
           </div>
         </div>
         <div className="md:w-1/2">
-          <Image
-            src="/assets/Side Project Review-Dark.svg"
-            alt="Product Hunt"
-            width="0"
-            height="0"
-            sizes="100vw"
-            className="w-auto h-auto dark:block hidden"
-          />
-          <Image
-            src="/assets/Side Project Review-Light.svg"
-            alt="Product Hunt"
-            width="0"
-            height="0"
-            sizes="100vw"
-            className="w-auto h-auto dark:hidden"
-          />
+          <SpReviewImg />
         </div>
       </div>
       <div className="flex flex-col md:flex-row-reverse gap-8 w-full items-center">

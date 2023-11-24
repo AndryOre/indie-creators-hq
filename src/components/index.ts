@@ -11,3 +11,4 @@ export * from "./benefitShowcase";
 export * from "./faqs";
 export * from "./discordImg";
 export * from "./shimmer";
+export * from "./spReviewImg";
