@@ -8,11 +8,6 @@ interface SpReviewImgProps extends SVGProps<SVGSVGElement> {
   className?: string;
 }
 
-const fadeIn = {
-  initial: { opacity: 0, y: 50 },
-  animate: { opacity: 1, y: 0, transition: { delay: 0.5 } },
-};
-
 export const SpReviewImg = ({ className }: SpReviewImgProps) => {
   const svgClass = cn("will-change-transform w-full h-full", className);
 
@@ -22,19 +17,22 @@ export const SpReviewImg = ({ className }: SpReviewImgProps) => {
       viewBox="0 0 1280 720"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      initial="initial"
-      whileInView="animate"
-      variants={fadeIn}
     >
       <motion.g id="Side Project Review-Dark">
-        <motion.g id="Side Project Name" filter="url(#filter0_d_316_612)">
+        <motion.g
+          id="Side Project Name"
+          filter="url(#filter0_d_316_612)"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
           <motion.rect
             x="435.5"
             y="143"
             width="409"
             height="75"
             rx="8"
-            shape-rendering="crispEdges"
+            shapeRendering="crispEdges"
             className="dark:fill-[#121212] fill-white drop-shadow-lg"
           />
           <motion.path
@@ -44,7 +42,13 @@ export const SpReviewImg = ({ className }: SpReviewImgProps) => {
           />
         </motion.g>
         <motion.g id="Feature Request">
-          <motion.g id="Title" filter="url(#filter1_d_316_612)">
+          <motion.g
+            id="Title"
+            filter="url(#filter1_d_316_612)"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 1 }}
+          >
             <motion.rect
               x="34"
               y="274"
@@ -52,7 +56,7 @@ export const SpReviewImg = ({ className }: SpReviewImgProps) => {
               height="75"
               rx="8"
               className="dark:fill-[#121212] fill-white drop-shadow-lg"
-              shape-rendering="crispEdges"
+              shapeRendering="crispEdges"
             />
             <motion.path
               id="Feature Request Text"
@@ -62,7 +66,13 @@ export const SpReviewImg = ({ className }: SpReviewImgProps) => {
             />
           </motion.g>
           <motion.g id="List">
-            <motion.g id="Item" filter="url(#filter2_d_316_612)">
+            <motion.g
+              id="Item"
+              filter="url(#filter2_d_316_612)"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 2 }}
+            >
               <motion.rect
                 x="34"
                 y="373"
@@ -70,7 +80,7 @@ export const SpReviewImg = ({ className }: SpReviewImgProps) => {
                 height="60"
                 rx="8"
                 className="dark:fill-[#121212] fill-white drop-shadow-lg"
-                shape-rendering="crispEdges"
+                shapeRendering="crispEdges"
               />
               <motion.path
                 id="Icon"
@@ -83,7 +93,13 @@ export const SpReviewImg = ({ className }: SpReviewImgProps) => {
                 className="dark:fill-[#D3D3D3] fill-[#1E1E1E]"
               />
             </motion.g>
-            <motion.g id="Item_2" filter="url(#filter3_d_316_612)">
+            <motion.g
+              id="Item_2"
+              filter="url(#filter3_d_316_612)"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 2.5 }}
+            >
               <motion.rect
                 x="34"
                 y="445"
@@ -91,7 +107,7 @@ export const SpReviewImg = ({ className }: SpReviewImgProps) => {
                 height="60"
                 rx="8"
                 className="dark:fill-[#121212] fill-white drop-shadow-lg"
-                shape-rendering="crispEdges"
+                shapeRendering="crispEdges"
               />
               <motion.path
                 id="Icon_2"
@@ -104,7 +120,13 @@ export const SpReviewImg = ({ className }: SpReviewImgProps) => {
                 className="dark:fill-[#D3D3D3] fill-[#1E1E1E]"
               />
             </motion.g>
-            <motion.g id="Item_3" filter="url(#filter4_d_316_612)">
+            <motion.g
+              id="Item_3"
+              filter="url(#filter4_d_316_612)"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 3 }}
+            >
               <motion.rect
                 x="34"
                 y="517"
@@ -112,7 +134,7 @@ export const SpReviewImg = ({ className }: SpReviewImgProps) => {
                 height="60"
                 rx="8"
                 className="dark:fill-[#121212] fill-white drop-shadow-lg"
-                shape-rendering="crispEdges"
+                shapeRendering="crispEdges"
               />
               <motion.path
                 id="Icon_3"
@@ -128,7 +150,13 @@ export const SpReviewImg = ({ className }: SpReviewImgProps) => {
           </motion.g>
         </motion.g>
         <motion.g id="Improvements">
-          <motion.g id="Title_2" filter="url(#filter5_d_316_612)">
+          <motion.g
+            id="Title_2"
+            filter="url(#filter5_d_316_612)"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 1 }}
+          >
             <motion.rect
               x="474"
               y="274"
@@ -136,7 +164,7 @@ export const SpReviewImg = ({ className }: SpReviewImgProps) => {
               height="75"
               rx="8"
               className="dark:fill-[#121212] fill-white drop-shadow-lg"
-              shape-rendering="crispEdges"
+              shapeRendering="crispEdges"
             />
             <motion.path
               id="Improvements Text"
@@ -145,7 +173,13 @@ export const SpReviewImg = ({ className }: SpReviewImgProps) => {
             />
           </motion.g>
           <motion.g id="List_2">
-            <motion.g id="Item_4" filter="url(#filter6_d_316_612)">
+            <motion.g
+              id="Item_4"
+              filter="url(#filter6_d_316_612)"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 2 }}
+            >
               <motion.rect
                 x="474"
                 y="373"
@@ -153,7 +187,7 @@ export const SpReviewImg = ({ className }: SpReviewImgProps) => {
                 height="60"
                 rx="8"
                 className="dark:fill-[#121212] fill-white drop-shadow-lg"
-                shape-rendering="crispEdges"
+                shapeRendering="crispEdges"
               />
               <motion.path
                 id="Icon_4"
@@ -166,7 +200,13 @@ export const SpReviewImg = ({ className }: SpReviewImgProps) => {
                 className="dark:fill-[#D3D3D3] fill-[#1E1E1E]"
               />
             </motion.g>
-            <motion.g id="Item_5" filter="url(#filter7_d_316_612)">
+            <motion.g
+              id="Item_5"
+              filter="url(#filter7_d_316_612)"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 2.5 }}
+            >
               <motion.rect
                 x="474"
                 y="445"
@@ -174,7 +214,7 @@ export const SpReviewImg = ({ className }: SpReviewImgProps) => {
                 height="60"
                 rx="8"
                 className="dark:fill-[#121212] fill-white drop-shadow-lg"
-                shape-rendering="crispEdges"
+                shapeRendering="crispEdges"
               />
               <motion.path
                 id="Icon_5"
@@ -187,7 +227,13 @@ export const SpReviewImg = ({ className }: SpReviewImgProps) => {
                 className="dark:fill-[#D3D3D3] fill-[#1E1E1E]"
               />
             </motion.g>
-            <motion.g id="Item_6" filter="url(#filter8_d_316_612)">
+            <motion.g
+              id="Item_6"
+              filter="url(#filter8_d_316_612)"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 3 }}
+            >
               <motion.rect
                 x="474"
                 y="517"
@@ -195,7 +241,7 @@ export const SpReviewImg = ({ className }: SpReviewImgProps) => {
                 height="60"
                 rx="8"
                 className="dark:fill-[#121212] fill-white drop-shadow-lg"
-                shape-rendering="crispEdges"
+                shapeRendering="crispEdges"
               />
               <motion.path
                 id="Icon_6"
@@ -211,7 +257,13 @@ export const SpReviewImg = ({ className }: SpReviewImgProps) => {
           </motion.g>
         </motion.g>
         <motion.g id="Serudda Thoughts">
-          <motion.g id="Title_3" filter="url(#filter9_d_316_612)">
+          <motion.g
+            id="Title_3"
+            filter="url(#filter9_d_316_612)"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 1 }}
+          >
             <motion.rect
               x="838"
               y="274"
@@ -219,7 +271,7 @@ export const SpReviewImg = ({ className }: SpReviewImgProps) => {
               height="75"
               rx="8"
               className="dark:fill-[#121212] fill-white drop-shadow-lg"
-              shape-rendering="crispEdges"
+              shapeRendering="crispEdges"
             />
             <motion.path
               id="Serudda Thoughts Text"
@@ -228,7 +280,13 @@ export const SpReviewImg = ({ className }: SpReviewImgProps) => {
             />
           </motion.g>
           <motion.g id="List_3">
-            <motion.g id="Item_7" filter="url(#filter10_d_316_612)">
+            <motion.g
+              id="Item_7"
+              filter="url(#filter10_d_316_612)"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 2 }}
+            >
               <motion.rect
                 x="838"
                 y="373"
@@ -236,7 +294,7 @@ export const SpReviewImg = ({ className }: SpReviewImgProps) => {
                 height="60"
                 rx="8"
                 className="dark:fill-[#121212] fill-white drop-shadow-lg"
-                shape-rendering="crispEdges"
+                shapeRendering="crispEdges"
               />
               <motion.path
                 id="Icon_7"
@@ -249,7 +307,13 @@ export const SpReviewImg = ({ className }: SpReviewImgProps) => {
                 className="dark:fill-[#D3D3D3] fill-[#1E1E1E]"
               />
             </motion.g>
-            <motion.g id="Item_8" filter="url(#filter11_d_316_612)">
+            <motion.g
+              id="Item_8"
+              filter="url(#filter11_d_316_612)"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 2.5 }}
+            >
               <motion.rect
                 x="838"
                 y="445"
@@ -257,7 +321,7 @@ export const SpReviewImg = ({ className }: SpReviewImgProps) => {
                 height="60"
                 rx="8"
                 className="dark:fill-[#121212] fill-white drop-shadow-lg"
-                shape-rendering="crispEdges"
+                shapeRendering="crispEdges"
               />
               <motion.path
                 id="Icon_8"
@@ -270,7 +334,13 @@ export const SpReviewImg = ({ className }: SpReviewImgProps) => {
                 className="dark:fill-[#D3D3D3] fill-[#1E1E1E]"
               />
             </motion.g>
-            <motion.g id="Item_9" filter="url(#filter12_d_316_612)">
+            <motion.g
+              id="Item_9"
+              filter="url(#filter12_d_316_612)"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 3 }}
+            >
               <motion.rect
                 x="838"
                 y="517"
@@ -278,7 +348,7 @@ export const SpReviewImg = ({ className }: SpReviewImgProps) => {
                 height="60"
                 rx="8"
                 className="dark:fill-[#121212] fill-white drop-shadow-lg"
-                shape-rendering="crispEdges"
+                shapeRendering="crispEdges"
               />
               <motion.path
                 id="Icon_9"

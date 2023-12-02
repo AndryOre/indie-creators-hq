@@ -1,8 +1,8 @@
-import { type SVGProps, useRef } from "react";
+import { type SVGProps } from "react";
 
 import { cn } from "@/lib/utils";
 
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 
 interface LaunchBoostImgProps extends SVGProps<SVGSVGElement> {
   className?: string;
@@ -11,16 +11,12 @@ interface LaunchBoostImgProps extends SVGProps<SVGSVGElement> {
 export const LaunchBoostImg = ({ className }: LaunchBoostImgProps) => {
   const svgClass = cn("will-change-transform w-full h-full", className);
 
-  const svgRef = useRef(null);
-  const isInView = useInView(svgRef);
-
   return (
     <motion.svg
       className={svgClass}
       viewBox="0 0 1280 720"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      ref={svgRef}
     >
       <motion.g id="Launch Boost-Dark">
         <motion.g id="Rocket">
@@ -35,8 +31,8 @@ export const LaunchBoostImg = ({ className }: LaunchBoostImgProps) => {
           <motion.g
             id="Rocket_2"
             animate={{
-              x: isInView ? ["2%", "-2%", "2%"] : 0,
-              y: isInView ? ["-2%", "2%", "-2%"] : 0,
+              x: ["2%", "-2%", "2%"],
+              y: ["-2%", "2%", "-2%"],
             }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
           >
@@ -149,7 +145,7 @@ export const LaunchBoostImg = ({ className }: LaunchBoostImgProps) => {
                 height="0"
                 rx="8"
                 className="fill-[#FF6154]"
-                animate={{ height: isInView ? 80 : 0 }}
+                animate={{ height: 80 }}
                 transition={{ duration: 2 }}
                 style={{ rotate: "180deg" }}
               />
@@ -161,7 +157,7 @@ export const LaunchBoostImg = ({ className }: LaunchBoostImgProps) => {
                 height="0"
                 rx="8"
                 className="fill-[#FD877D]"
-                animate={{ height: isInView ? 143 : 0 }}
+                animate={{ height: 143 }}
                 transition={{ duration: 2 }}
                 style={{ rotate: "180deg" }}
               />
@@ -173,7 +169,7 @@ export const LaunchBoostImg = ({ className }: LaunchBoostImgProps) => {
                 height="0"
                 rx="8"
                 className="fill-[#FF6154]"
-                animate={{ height: isInView ? 97 : 0 }}
+                animate={{ height: 97 }}
                 transition={{ duration: 2 }}
                 style={{ rotate: "180deg" }}
               />
@@ -184,14 +180,14 @@ export const LaunchBoostImg = ({ className }: LaunchBoostImgProps) => {
                 d="M529.862 96.8671C529.862 103.381 524.581 108.662 518.067 108.662C511.553 108.662 506.272 103.381 506.272 96.8671C506.272 90.3531 511.553 85.0722 518.067 85.0722C524.581 85.0722 529.862 90.3531 529.862 96.8671Z"
                 className="fill-black dark:fill-white"
                 initial={{ opacity: 0 }}
-                animate={{ opacity: isInView ? 1 : 0 }}
+                animate={{ opacity: 1 }}
               />
               <motion.path
                 id="Curved Line"
                 d="M344 145.684C347.695 129.766 351.498 113.572 359.774 99.482C368.05 85.3921 381.649 73.4772 397.849 71.3488C411.35 69.5759 424.967 74.7591 436.24 82.3973C447.513 90.0354 456.928 100.044 466.852 109.368C474.739 116.778 484.641 124.28 495.277 122.281C506.947 120.088 513.355 107.767 518.067 96.8671"
                 className="stroke-black stroke-2 dark:stroke-white"
                 initial={{ pathLength: 0 }}
-                animate={{ pathLength: isInView ? 1 : 0 }}
+                animate={{ pathLength: 1 }}
                 transition={{ duration: 2 }}
               />
             </motion.g>
