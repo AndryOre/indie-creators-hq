@@ -14,8 +14,8 @@ export const DiscordImg = ({ className }: DiscordImgProps) => {
   return (
     <motion.svg
       className={svgClass}
-      animate={{ y: ["-1%", "1%", "-1%"] }}
-      transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+      animate={{ y: ["-2%", "2%", "-2%"] }}
+      transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
       viewBox="0 0 1280 720"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -246,7 +246,7 @@ export const DiscordImg = ({ className }: DiscordImgProps) => {
                 height="40"
                 rx="8"
                 className="fill-[#DFE1E5] dark:fill-[#35373C] drop-shadow-lg"
-                shape-rendering="crispEdges"
+                shapeRendering="crispEdges"
               />
               <path
                 id="#_2"
@@ -272,7 +272,7 @@ export const DiscordImg = ({ className }: DiscordImgProps) => {
                 height="48"
                 rx="8"
                 className="fill-[#D7D9DC] dark:fill-[#404249] drop-shadow-lg"
-                shape-rendering="crispEdges"
+                shapeRendering="crispEdges"
               />
               <path
                 id="#_3"
@@ -300,7 +300,7 @@ export const DiscordImg = ({ className }: DiscordImgProps) => {
                 height="40"
                 rx="8"
                 className="fill-[#DFE1E5] dark:fill-[#35373C] drop-shadow-lg"
-                shape-rendering="crispEdges"
+                shapeRendering="crispEdges"
               />
               <path
                 id="#_4"
@@ -326,7 +326,7 @@ export const DiscordImg = ({ className }: DiscordImgProps) => {
                 height="40"
                 rx="8"
                 className="fill-[#DFE1E5] dark:fill-[#35373C] drop-shadow-lg"
-                shape-rendering="crispEdges"
+                shapeRendering="crispEdges"
               />
               <path
                 id="#_5"
@@ -362,8 +362,8 @@ export const DiscordImg = ({ className }: DiscordImgProps) => {
               <g id="voice channel_2">
                 <path
                   id="Vector"
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
+                  fillRule="evenodd"
+                  clipRule="evenodd"
                   d="M280.729 340.345C280.261 340.152 279.724 340.258 279.366 340.616L274 346.499H270.25C269.562 346.499 269 347.062 269 347.749V355.249C269 355.936 269.562 356.499 270.25 356.499H274L279.366 362.384C279.724 362.741 280.261 362.849 280.729 362.655C281.196 362.461 281.5 362.005 281.5 361.499V341.498C281.5 340.995 281.196 340.536 280.729 340.345ZM284 342.748V345.248C287.446 345.248 290.25 348.053 290.25 351.498C290.25 354.945 287.446 357.748 284 357.748V360.248C288.825 360.248 292.75 356.325 292.75 351.498C292.75 346.675 288.825 342.748 284 342.748ZM284 347.748C286.067 347.748 287.75 349.432 287.75 351.498C287.75 353.567 286.067 355.248 284 355.248V352.748C284.689 352.748 285.25 352.187 285.25 351.498C285.25 350.81 284.689 350.248 284 350.248V347.748Z"
                   className="fill-[#6D6F78] dark:fill-[#80848E]"
                 />
@@ -593,8 +593,8 @@ export const DiscordImg = ({ className }: DiscordImgProps) => {
               <g id="voice channel_4">
                 <path
                   id="Vector_12"
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
+                  fillRule="evenodd"
+                  clipRule="evenodd"
                   d="M280.729 536.345C280.261 536.152 279.724 536.258 279.366 536.616L274 542.499H270.25C269.562 542.499 269 543.062 269 543.749V551.249C269 551.936 269.562 552.499 270.25 552.499H274L279.366 558.384C279.724 558.741 280.261 558.849 280.729 558.655C281.196 558.461 281.5 558.005 281.5 557.499V537.498C281.5 536.995 281.196 536.536 280.729 536.345ZM284 538.748V541.248C287.446 541.248 290.25 544.053 290.25 547.498C290.25 550.945 287.446 553.748 284 553.748V556.248C288.825 556.248 292.75 552.325 292.75 547.498C292.75 542.675 288.825 538.748 284 538.748ZM284 543.748C286.067 543.748 287.75 545.432 287.75 547.498C287.75 549.567 286.067 551.248 284 551.248V548.748C284.689 548.748 285.25 548.187 285.25 547.498C285.25 546.81 284.689 546.248 284 546.248V543.748Z"
                   className="fill-[#6D6F78] dark:fill-[#80848E]"
                 />
@@ -702,7 +702,7 @@ export const DiscordImg = ({ className }: DiscordImgProps) => {
               height="46.4003"
               rx="8"
               className="fill-[#EBEDEF] dark:fill-[#232428] drop-shadow-lg"
-              shape-rendering="crispEdges"
+              shapeRendering="crispEdges"
             />
             <g id="Group 1">
               <path
