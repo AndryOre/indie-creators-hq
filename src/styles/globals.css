@@ -104,3 +104,98 @@
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
+
+/* DiscordImg Animations */
+
+.discordBounce {
+  animation: discordBounceAnimation 4s infinite ease-in-out;
+}
+@keyframes discordBounceAnimation {
+  0%,
+  100% {
+    transform: translateY(-2%);
+  }
+  50% {
+    transform: translateY(2%);
+  }
+}
+
+/* Pink Spark */
+.pinkSpark {
+  filter: drop-shadow(0 0 10px rgba(253, 210, 248, 1));
+  animation: pinkSparkAnimation 2s infinite;
+}
+
+@keyframes pinkSparkAnimation {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 10px rgba(253, 210, 248, 1));
+  }
+  50% {
+    filter: drop-shadow(0 0 5px rgba(253, 210, 248, 0.7));
+  }
+}
+
+/* Green Spark */
+.greenSpark {
+  filter: drop-shadow(0 0 10px rgba(41, 204, 122, 1));
+  animation: greenSparkAnimation 2s infinite;
+}
+
+@keyframes greenSparkAnimation {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 10px rgba(41, 204, 122, 1));
+  }
+  50% {
+    filter: drop-shadow(0 0 5px rgba(41, 204, 122, 0.7));
+  }
+}
+
+/* Purple Spark */
+.purpleSpark {
+  filter: drop-shadow(0 0 10px rgba(255, 120, 185, 1));
+  animation: purpleSparkAnimation 3s infinite;
+}
+
+@keyframes purpleSparkAnimation {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 10px rgba(255, 120, 185, 1));
+  }
+  50% {
+    filter: drop-shadow(0 0 5px rgba(255, 120, 185, 0.7));
+  }
+}
+
+/* Yellow Spark */
+.yellowSpark {
+  filter: drop-shadow(0 0 10px rgba(255, 231, 92, 1));
+  animation: yellowSparkAnimation 3s infinite;
+}
+
+@keyframes yellowSparkAnimation {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 10px rgba(255, 231, 92, 1));
+  }
+  50% {
+    filter: drop-shadow(0 0 5px rgba(255, 231, 92, 0.7));
+  }
+}
+
+/* Green Spark 2 */
+.greenSpark2 {
+  filter: drop-shadow(0 0 10px rgba(106, 219, 198, 1));
+  animation: greenSpark2Animation 3s infinite;
+}
+
+@keyframes greenSpark2Animation {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 10px rgba(106, 219, 198, 1));
+  }
+  50% {
+    filter: drop-shadow(0 0 5px rgba(106, 219, 198, 0.7));
+  }
+}
