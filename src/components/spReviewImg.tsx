@@ -17,13 +17,7 @@ export const SpReviewImg = ({ className }: SpReviewImgProps) => {
       xmlns="http://www.w3.org/2000/svg"
     >
       <g id="Side Project Review-Dark">
-        <g
-          id="Side Project Name"
-
-          /* initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1 }} */
-        >
+        <g id="Side Project Name" className="spName">
           <rect
             x="435.5"
             y="143"
@@ -40,13 +34,7 @@ export const SpReviewImg = ({ className }: SpReviewImgProps) => {
           />
         </g>
         <g id="Feature Request">
-          <g
-            id="Title"
-
-            /* initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 1 }} */
-          >
+          <g id="Title" className="spTitle">
             <rect
               x="34"
               y="274"
@@ -64,13 +52,7 @@ export const SpReviewImg = ({ className }: SpReviewImgProps) => {
             />
           </g>
           <g id="List">
-            <g
-              id="Item"
-
-              /* initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 2 }} */
-            >
+            <g id="Item" className="spItem1">
               <rect
                 x="34"
                 y="373"
@@ -91,13 +73,7 @@ export const SpReviewImg = ({ className }: SpReviewImgProps) => {
                 className="dark:fill-[#D3D3D3] fill-[#1E1E1E]"
               />
             </g>
-            <g
-              id="Item_2"
-
-              /* initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 2.5 }} */
-            >
+            <g id="Item_2" className="spItem2">
               <rect
                 x="34"
                 y="445"
@@ -118,13 +94,7 @@ export const SpReviewImg = ({ className }: SpReviewImgProps) => {
                 className="dark:fill-[#D3D3D3] fill-[#1E1E1E]"
               />
             </g>
-            <g
-              id="Item_3"
-
-              /* initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 3 }} */
-            >
+            <g id="Item_3" className="spItem3">
               <rect
                 x="34"
                 y="517"
@@ -148,13 +118,7 @@ export const SpReviewImg = ({ className }: SpReviewImgProps) => {
           </g>
         </g>
         <g id="Improvements">
-          <g
-            id="Title_2"
-
-            /* initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 1 }} */
-          >
+          <g id="Title_2" className="spTitle">
             <rect
               x="474"
               y="274"
@@ -171,13 +135,7 @@ export const SpReviewImg = ({ className }: SpReviewImgProps) => {
             />
           </g>
           <g id="List_2">
-            <g
-              id="Item_4"
-
-              /* initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 2 }} */
-            >
+            <g id="Item_4" className="spItem1">
               <rect
                 x="474"
                 y="373"
@@ -198,13 +156,7 @@ export const SpReviewImg = ({ className }: SpReviewImgProps) => {
                 className="dark:fill-[#D3D3D3] fill-[#1E1E1E]"
               />
             </g>
-            <g
-              id="Item_5"
-
-              /* initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 2.5 }} */
-            >
+            <g id="Item_5" className="spItem2">
               <rect
                 x="474"
                 y="445"
@@ -225,13 +177,7 @@ export const SpReviewImg = ({ className }: SpReviewImgProps) => {
                 className="dark:fill-[#D3D3D3] fill-[#1E1E1E]"
               />
             </g>
-            <g
-              id="Item_6"
-
-              /* initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 3 }} */
-            >
+            <g id="Item_6" className="spItem3">
               <rect
                 x="474"
                 y="517"
@@ -255,13 +201,7 @@ export const SpReviewImg = ({ className }: SpReviewImgProps) => {
           </g>
         </g>
         <g id="Serudda Thoughts">
-          <g
-            id="Title_3"
-
-            /* initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 1 }} */
-          >
+          <g id="Title_3" className="spTitle">
             <rect
               x="838"
               y="274"
@@ -278,13 +218,7 @@ export const SpReviewImg = ({ className }: SpReviewImgProps) => {
             />
           </g>
           <g id="List_3">
-            <g
-              id="Item_7"
-
-              /* initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 2 }} */
-            >
+            <g id="Item_7" className="spItem1">
               <rect
                 x="838"
                 y="373"
@@ -305,13 +239,7 @@ export const SpReviewImg = ({ className }: SpReviewImgProps) => {
                 className="dark:fill-[#D3D3D3] fill-[#1E1E1E]"
               />
             </g>
-            <g
-              id="Item_8"
-
-              /* initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 2.5 }} */
-            >
+            <g id="Item_8" className="spItem2">
               <rect
                 x="838"
                 y="445"
@@ -332,13 +260,7 @@ export const SpReviewImg = ({ className }: SpReviewImgProps) => {
                 className="dark:fill-[#D3D3D3] fill-[#1E1E1E]"
               />
             </g>
-            <g
-              id="Item_9"
-
-              /* initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 3 }} */
-            >
+            <g id="Item_9" className="spItem3">
               <rect
                 x="838"
                 y="517"

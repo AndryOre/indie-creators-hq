@@ -199,3 +199,39 @@
     filter: drop-shadow(0 0 5px rgba(106, 219, 198, 0.7));
   }
 }
+
+/* spReviewImg Animations */
+
+.spName {
+  opacity: 0;
+  animation: fadeIn 1s 1s forwards;
+}
+
+.spTitle {
+  opacity: 0;
+  animation: fadeIn 1s 1.5s forwards;
+}
+
+.spItem1 {
+  opacity: 0;
+  animation: fadeIn 1s 2s forwards;
+}
+
+.spItem2 {
+  opacity: 0;
+  animation: fadeIn 1s 2.5s forwards;
+}
+
+.spItem3 {
+  opacity: 0;
+  animation: fadeIn 1s 3s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
