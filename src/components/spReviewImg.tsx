@@ -1,6 +1,8 @@
-import { type SVGProps } from "react";
+import { type SVGProps, useEffect, useRef } from "react";
 
 import { cn } from "@/lib/utils";
+
+import { useInView } from "react-intersection-observer";
 
 interface SpReviewImgProps extends SVGProps<SVGSVGElement> {
   className?: string;
@@ -9,15 +11,56 @@ interface SpReviewImgProps extends SVGProps<SVGSVGElement> {
 export const SpReviewImg = ({ className }: SpReviewImgProps) => {
   const svgClass = cn("will-change-transform w-full h-full", className);
 
+  const [ref, inView] = useInView({
+    threshold: 0.5,
+  });
+
+  const spNameRef = useRef<SVGSVGElement>(null);
+  const spTitle1Ref = useRef<SVGSVGElement>(null);
+  const spTitle2Ref = useRef<SVGSVGElement>(null);
+  const spTitle3Ref = useRef<SVGSVGElement>(null);
+  const spItem1Ref = useRef<SVGSVGElement>(null);
+  const spItem2Ref = useRef<SVGSVGElement>(null);
+  const spItem3Ref = useRef<SVGSVGElement>(null);
+  const spItem4Ref = useRef<SVGSVGElement>(null);
+  const spItem5Ref = useRef<SVGSVGElement>(null);
+  const spItem6Ref = useRef<SVGSVGElement>(null);
+  const spItem7Ref = useRef<SVGSVGElement>(null);
+  const spItem8Ref = useRef<SVGSVGElement>(null);
+  const spItem9Ref = useRef<SVGSVGElement>(null);
+
+  const refs = [
+    { ref: spNameRef, className: "spName" },
+    { ref: spTitle1Ref, className: "spTitle" },
+    { ref: spTitle2Ref, className: "spTitle" },
+    { ref: spTitle3Ref, className: "spTitle" },
+    { ref: spItem1Ref, className: "spItem1" },
+    { ref: spItem2Ref, className: "spItem2" },
+    { ref: spItem3Ref, className: "spItem3" },
+    { ref: spItem4Ref, className: "spItem1" },
+    { ref: spItem5Ref, className: "spItem2" },
+    { ref: spItem6Ref, className: "spItem3" },
+    { ref: spItem7Ref, className: "spItem1" },
+    { ref: spItem8Ref, className: "spItem2" },
+    { ref: spItem9Ref, className: "spItem3" },
+  ];
+
+  useEffect(() => {
+    refs.forEach(({ ref, className }) => {
+      ref?.current?.classList.toggle(className, inView);
+    });
+  }, [inView]);
+
   return (
     <svg
       className={svgClass}
       viewBox="0 0 1280 720"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      ref={ref}
     >
       <g id="Side Project Review-Dark">
-        <g id="Side Project Name" className="spName">
+        <g id="Side Project Name" ref={spNameRef}>
           <rect
             x="435.5"
             y="143"
@@ -25,7 +68,7 @@ export const SpReviewImg = ({ className }: SpReviewImgProps) => {
             height="75"
             rx="8"
             shapeRendering="crispEdges"
-            className="dark:fill-[#121212] fill-white drop-shadow-lg"
+            className="dark:fill-[#121212] fill-white drop-shadow-lg appearance-none"
           />
           <path
             id="Side Project Name Text"
@@ -34,7 +77,7 @@ export const SpReviewImg = ({ className }: SpReviewImgProps) => {
           />
         </g>
         <g id="Feature Request">
-          <g id="Title" className="spTitle">
+          <g id="Title" ref={spTitle1Ref}>
             <rect
               x="34"
               y="274"
@@ -52,7 +95,7 @@ export const SpReviewImg = ({ className }: SpReviewImgProps) => {
             />
           </g>
           <g id="List">
-            <g id="Item" className="spItem1">
+            <g id="Item" ref={spItem1Ref}>
               <rect
                 x="34"
                 y="373"
@@ -73,7 +116,7 @@ export const SpReviewImg = ({ className }: SpReviewImgProps) => {
                 className="dark:fill-[#D3D3D3] fill-[#1E1E1E]"
               />
             </g>
-            <g id="Item_2" className="spItem2">
+            <g id="Item_2" ref={spItem2Ref}>
               <rect
                 x="34"
                 y="445"
@@ -94,7 +137,7 @@ export const SpReviewImg = ({ className }: SpReviewImgProps) => {
                 className="dark:fill-[#D3D3D3] fill-[#1E1E1E]"
               />
             </g>
-            <g id="Item_3" className="spItem3">
+            <g id="Item_3" ref={spItem3Ref}>
               <rect
                 x="34"
                 y="517"
@@ -118,7 +161,7 @@ export const SpReviewImg = ({ className }: SpReviewImgProps) => {
           </g>
         </g>
         <g id="Improvements">
-          <g id="Title_2" className="spTitle">
+          <g id="Title_2" ref={spTitle2Ref}>
             <rect
               x="474"
               y="274"
@@ -135,7 +178,7 @@ export const SpReviewImg = ({ className }: SpReviewImgProps) => {
             />
           </g>
           <g id="List_2">
-            <g id="Item_4" className="spItem1">
+            <g id="Item_4" ref={spItem4Ref}>
               <rect
                 x="474"
                 y="373"
@@ -156,7 +199,7 @@ export const SpReviewImg = ({ className }: SpReviewImgProps) => {
                 className="dark:fill-[#D3D3D3] fill-[#1E1E1E]"
               />
             </g>
-            <g id="Item_5" className="spItem2">
+            <g id="Item_5" ref={spItem5Ref}>
               <rect
                 x="474"
                 y="445"
@@ -177,7 +220,7 @@ export const SpReviewImg = ({ className }: SpReviewImgProps) => {
                 className="dark:fill-[#D3D3D3] fill-[#1E1E1E]"
               />
             </g>
-            <g id="Item_6" className="spItem3">
+            <g id="Item_6" ref={spItem6Ref}>
               <rect
                 x="474"
                 y="517"
@@ -201,7 +244,7 @@ export const SpReviewImg = ({ className }: SpReviewImgProps) => {
           </g>
         </g>
         <g id="Serudda Thoughts">
-          <g id="Title_3" className="spTitle">
+          <g id="Title_3" ref={spTitle3Ref}>
             <rect
               x="838"
               y="274"
@@ -218,7 +261,7 @@ export const SpReviewImg = ({ className }: SpReviewImgProps) => {
             />
           </g>
           <g id="List_3">
-            <g id="Item_7" className="spItem1">
+            <g id="Item_7" ref={spItem7Ref}>
               <rect
                 x="838"
                 y="373"
@@ -239,7 +282,7 @@ export const SpReviewImg = ({ className }: SpReviewImgProps) => {
                 className="dark:fill-[#D3D3D3] fill-[#1E1E1E]"
               />
             </g>
-            <g id="Item_8" className="spItem2">
+            <g id="Item_8" ref={spItem8Ref}>
               <rect
                 x="838"
                 y="445"
@@ -260,7 +303,7 @@ export const SpReviewImg = ({ className }: SpReviewImgProps) => {
                 className="dark:fill-[#D3D3D3] fill-[#1E1E1E]"
               />
             </g>
-            <g id="Item_9" className="spItem3">
+            <g id="Item_9" ref={spItem9Ref}>
               <rect
                 x="838"
                 y="517"
