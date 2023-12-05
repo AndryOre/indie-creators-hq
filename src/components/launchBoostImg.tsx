@@ -1,6 +1,8 @@
-import { type SVGProps } from "react";
+import { type RefObject, type SVGProps, useEffect, useRef } from "react";
 
 import { cn } from "@/lib/utils";
+
+import { useInView } from "react-intersection-observer";
 
 interface LaunchBoostImgProps extends SVGProps<SVGSVGElement> {
   className?: string;
@@ -9,12 +11,37 @@ interface LaunchBoostImgProps extends SVGProps<SVGSVGElement> {
 export const LaunchBoostImg = ({ className }: LaunchBoostImgProps) => {
   const svgClass = cn("will-change-transform w-full h-full", className);
 
+  const [ref, inView] = useInView({
+    threshold: 0.5,
+  });
+
+  const bar1Ref: RefObject<SVGRectElement> = useRef(null);
+  const bar2Ref: RefObject<SVGRectElement> = useRef(null);
+  const bar3Ref: RefObject<SVGRectElement> = useRef(null);
+  const curvedLineRef: RefObject<SVGPathElement> = useRef(null);
+  const dotRef: RefObject<SVGPathElement> = useRef(null);
+
+  const refs = [
+    { ref: bar1Ref, className: "barGrowing" },
+    { ref: bar2Ref, className: "barGrowing2" },
+    { ref: bar3Ref, className: "barGrowing3" },
+    { ref: curvedLineRef, className: "curvedLine" },
+    { ref: dotRef, className: "dot" },
+  ];
+
+  useEffect(() => {
+    refs.forEach(({ ref, className }) => {
+      ref?.current?.classList.toggle(className, inView);
+    });
+  }, [inView]);
+
   return (
     <svg
       className={svgClass}
       viewBox="0 0 1280 720"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      ref={ref}
     >
       <g id="Launch Boost-Dark">
         <g id="Rocket">
@@ -26,14 +53,7 @@ export const LaunchBoostImg = ({ className }: LaunchBoostImgProps) => {
             rx="16"
             className="fill-[#f5f5f5] dark:fill-[#171717] drop-shadow-lg"
           />
-          <g
-            id="Rocket_2"
-            /* animate={{
-              x: ["2%", "-2%", "2%"],
-              y: ["-2%", "2%", "-2%"],
-            }}
-            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }} */
-          >
+          <g id="Rocket_2" className="rocket">
             <g id="Flame">
               <path
                 id="Background"
@@ -137,39 +157,33 @@ export const LaunchBoostImg = ({ className }: LaunchBoostImgProps) => {
             <g id="Bars">
               <rect
                 id="Bar"
-                x="333"
-                y="179.97"
+                x="-378"
+                y="-259.97"
                 width="45"
-                height="80"
+                height="0"
                 rx="8"
                 className="fill-[#FF6154]"
-                /* animate={{ height: 80 }}
-                transition={{ duration: 2 }}
-                style={{ transform: "rotate(30deg)" }} */
+                ref={bar1Ref}
               />
               <rect
                 id="Bar_2"
-                x="414"
-                y="116.97"
+                x="-459"
+                y="-259.97"
                 width="45"
-                height="143"
+                height="0"
                 rx="8"
                 className="fill-[#FD877D]"
-                /* animate={{ height: 143 }}
-                transition={{ duration: 2 }}
-                style={{ rotate: "180deg" }} */
+                ref={bar2Ref}
               />
               <rect
                 id="Bar_3"
-                x="495"
-                y="162.97"
+                x="-540"
+                y="-259.97"
                 width="45"
-                height="97"
+                height="0"
                 rx="8"
                 className="fill-[#FF6154]"
-                /* animate={{ height: 97 }}
-                transition={{ duration: 2 }}
-                style={{ rotate: "180deg" }} */
+                ref={bar3Ref}
               />
             </g>
             <g id="Line">
@@ -177,16 +191,13 @@ export const LaunchBoostImg = ({ className }: LaunchBoostImgProps) => {
                 id="Dot"
                 d="M529.862 96.8671C529.862 103.381 524.581 108.662 518.067 108.662C511.553 108.662 506.272 103.381 506.272 96.8671C506.272 90.3531 511.553 85.0722 518.067 85.0722C524.581 85.0722 529.862 90.3531 529.862 96.8671Z"
                 className="fill-black dark:fill-white"
-                /* initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }} */
+                ref={dotRef}
               />
               <path
                 id="Curved Line"
                 d="M344 145.684C347.695 129.766 351.498 113.572 359.774 99.482C368.05 85.3921 381.649 73.4772 397.849 71.3488C411.35 69.5759 424.967 74.7591 436.24 82.3973C447.513 90.0354 456.928 100.044 466.852 109.368C474.739 116.778 484.641 124.28 495.277 122.281C506.947 120.088 513.355 107.767 518.067 96.8671"
                 className="stroke-black stroke-2 dark:stroke-white"
-                /* initial={{ pathLength: 0 }}
-                animate={{ pathLength: 1 }}
-                transition={{ duration: 2 }} */
+                ref={curvedLineRef}
               />
             </g>
           </g>
