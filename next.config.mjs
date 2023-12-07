@@ -6,15 +6,6 @@ await import("./src/env.mjs");
 const config = {
   reactStrictMode: true,
   i18n: nextI18NextConfig.i18n,
-  images: {
-    dangerouslyAllowSVG: true,
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "res.cloudinary.com",
-      },
-    ],
-  },
 };
 
 export default config;

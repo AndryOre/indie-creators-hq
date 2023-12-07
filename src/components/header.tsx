@@ -76,12 +76,12 @@ export const Header = (): JSX.Element => {
             <Image
               src={IndieCreatorsHQLight as string}
               alt="Indie Creators HQ"
-              className="h-12 w-auto dark:hidden lg:h-16"
+              className="h-12 w-auto dark:hidden"
             />
             <Image
               src={IndieCreatorsHQDark as string}
               alt="Indie Creators HQ"
-              className="hidden h-12 w-auto dark:block lg:h-16"
+              className="hidden h-12 w-auto dark:block"
             />
           </Link>
           <div className="xl:hidden">
@@ -107,7 +107,7 @@ export const Header = (): JSX.Element => {
           <div className="flex gap-4">
             {/*             <div>
               {sessionData ? (
-                <DropdownMenu>
+                <DropdownMenu  modal={false}>
                   <DropdownMenuTrigger>
                     <Avatar className="border-[1px]">
                       <AvatarImage
@@ -155,7 +155,7 @@ export const Header = (): JSX.Element => {
               )}
             </div>
             <Separator orientation="vertical" className="bg-primary" /> */}
-            <DropdownMenu>
+            <DropdownMenu modal={false}>
               <DropdownMenuTrigger asChild>
                 <Button
                   variant="outline"
@@ -189,7 +189,7 @@ export const Header = (): JSX.Element => {
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
-            <DropdownMenu>
+            <DropdownMenu modal={false}>
               <DropdownMenuTrigger asChild>
                 <Button
                   variant="outline"
@@ -216,7 +216,7 @@ export const Header = (): JSX.Element => {
         </nav>
       </div>
       {isMenuOpen && (
-        <div className="fixed left-0 top-[20] z-50 flex h-full w-full flex-col gap-6 bg-background/80 px-4 py-2 backdrop-blur-sm lg:px-16 xl:hidden">
+        <div className="fixed inset-0 top-[72px] z-50 flex flex-col gap-6 bg-background/80 px-4 py-2 backdrop-blur-sm lg:px-16 xl:hidden">
           <nav className="flex flex-col gap-4">
             {/* {sessionData ? (
               <div className="flex flex-col gap-4">

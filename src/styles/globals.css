@@ -76,3 +76,253 @@
   background-size: var(--dots-separation);
   mask-image: var(--mask-image);
 }
+
+/* Shimmer Animation */
+
+@keyframes shimmerAnimation {
+  0% {
+    background-position: 200%;
+  }
+
+  25%,
+  100% {
+    background-position: -200%;
+  }
+}
+
+.shimmer {
+  background-image: linear-gradient(
+    -30deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.8) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-repeat: no-repeat;
+  background-size: 200% 100%;
+  animation-name: shimmerAnimation;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+/* DiscordImg Animations */
+
+.discordBounce {
+  animation: discordBounceAnimation 4s infinite ease-in-out;
+}
+@keyframes discordBounceAnimation {
+  0%,
+  100% {
+    transform: translateY(-2%);
+  }
+  50% {
+    transform: translateY(2%);
+  }
+}
+
+/* Pink Spark */
+.pinkSpark {
+  filter: drop-shadow(0 0 10px rgba(253, 210, 248, 1));
+  animation: pinkSparkAnimation 2s infinite;
+}
+
+@keyframes pinkSparkAnimation {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 10px rgba(253, 210, 248, 1));
+  }
+  50% {
+    filter: drop-shadow(0 0 5px rgba(253, 210, 248, 0.7));
+  }
+}
+
+/* Green Spark */
+.greenSpark {
+  filter: drop-shadow(0 0 10px rgba(41, 204, 122, 1));
+  animation: greenSparkAnimation 2s infinite;
+}
+
+@keyframes greenSparkAnimation {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 10px rgba(41, 204, 122, 1));
+  }
+  50% {
+    filter: drop-shadow(0 0 5px rgba(41, 204, 122, 0.7));
+  }
+}
+
+/* Purple Spark */
+.purpleSpark {
+  filter: drop-shadow(0 0 10px rgba(255, 120, 185, 1));
+  animation: purpleSparkAnimation 3s infinite;
+}
+
+@keyframes purpleSparkAnimation {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 10px rgba(255, 120, 185, 1));
+  }
+  50% {
+    filter: drop-shadow(0 0 5px rgba(255, 120, 185, 0.7));
+  }
+}
+
+/* Yellow Spark */
+.yellowSpark {
+  filter: drop-shadow(0 0 10px rgba(255, 231, 92, 1));
+  animation: yellowSparkAnimation 3s infinite;
+}
+
+@keyframes yellowSparkAnimation {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 10px rgba(255, 231, 92, 1));
+  }
+  50% {
+    filter: drop-shadow(0 0 5px rgba(255, 231, 92, 0.7));
+  }
+}
+
+/* Green Spark 2 */
+.greenSpark2 {
+  filter: drop-shadow(0 0 10px rgba(106, 219, 198, 1));
+  animation: greenSpark2Animation 3s infinite;
+}
+
+@keyframes greenSpark2Animation {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 10px rgba(106, 219, 198, 1));
+  }
+  50% {
+    filter: drop-shadow(0 0 5px rgba(106, 219, 198, 0.7));
+  }
+}
+
+/* LaunchBoostImg Animations */
+
+/* Rocket */
+.rocket {
+  animation: rocketAnimation 4s infinite ease-in-out;
+}
+
+@keyframes rocketAnimation {
+  0% {
+    transform: translate(2%, -2%);
+  }
+  50% {
+    transform: translate(-2%, 2%);
+  }
+  100% {
+    transform: translate(2%, -2%);
+  }
+}
+
+/* Stats */
+.barGrowing {
+  transform: rotate(180deg);
+  animation: barGrowing 2s ease forwards;
+}
+
+.barGrowing2 {
+  transform: rotate(180deg);
+  animation: barGrowing2 2s ease forwards;
+}
+
+.barGrowing3 {
+  transform: rotate(180deg);
+  animation: barGrowing3 2s ease forwards;
+}
+
+@keyframes barGrowing {
+  from {
+    height: 0px;
+  }
+  to {
+    height: 80px;
+  }
+}
+
+@keyframes barGrowing2 {
+  from {
+    height: 0px;
+  }
+  to {
+    height: 143px;
+  }
+}
+
+@keyframes barGrowing3 {
+  from {
+    height: 0px;
+  }
+  to {
+    height: 97px;
+  }
+}
+
+.curvedLine {
+  stroke-dashoffset: 1000;
+  stroke-dasharray: 1000;
+  animation: drawCurvedLine 4s linear forwards 1s;
+}
+
+@keyframes drawCurvedLine {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.dot {
+  opacity: 0;
+  animation: dotFadeIn 1s 2s forwards;
+}
+
+@keyframes dotFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* spReviewImg Animations */
+
+.spName {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+.spTitle {
+  opacity: 0;
+  animation: fadeIn 1s 0.5s forwards;
+}
+
+.spItem1 {
+  opacity: 0;
+  animation: fadeIn 1s 1s forwards;
+}
+
+.spItem2 {
+  opacity: 0;
+  animation: fadeIn 1s 1.5s forwards;
+}
+
+.spItem3 {
+  opacity: 0;
+  animation: fadeIn 1s 2s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

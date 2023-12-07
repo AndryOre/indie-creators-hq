@@ -1,4 +1,4 @@
-import React, { type ReactNode, useState } from "react";
+import React, { type ReactNode, useEffect, useRef, useState } from "react";
 
 import { cn } from "@/lib/utils";
 
@@ -22,14 +22,17 @@ interface CarouselProps {
   children: ReactNode[];
   size?: CarouselSize;
   className?: string;
+  autoAdvanceInterval?: number;
 }
 
 export function Carousel({
   children,
   size = CarouselSize.xl,
   className,
+  autoAdvanceInterval = 2000,
 }: CarouselProps): JSX.Element {
   const [startIndex, setStartIndex] = useState<number>(0);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   const nextSlide = () => {
     setStartIndex((prev) => (prev + 1) % children.length);
@@ -38,6 +41,26 @@ export function Carousel({
   const prevSlide = () => {
     setStartIndex((prev) => (prev === 0 ? children.length - 1 : prev - 1));
   };
+
+  const startAutoAdvance = () => {
+    intervalRef.current = setInterval(() => {
+      nextSlide();
+    }, autoAdvanceInterval);
+  };
+
+  const stopAutoAdvance = () => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+    }
+  };
+
+  useEffect(() => {
+    startAutoAdvance();
+
+    return () => {
+      stopAutoAdvance();
+    };
+  }, []);
 
   const displayedItems = [...children.slice(startIndex), ...children].slice(
     0,
