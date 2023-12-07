@@ -107,7 +107,7 @@ export const Header = (): JSX.Element => {
           <div className="flex gap-4">
             {/*             <div>
               {sessionData ? (
-                <DropdownMenu>
+                <DropdownMenu  modal={false}>
                   <DropdownMenuTrigger>
                     <Avatar className="border-[1px]">
                       <AvatarImage
@@ -155,7 +155,7 @@ export const Header = (): JSX.Element => {
               )}
             </div>
             <Separator orientation="vertical" className="bg-primary" /> */}
-            <DropdownMenu>
+            <DropdownMenu modal={false}>
               <DropdownMenuTrigger asChild>
                 <Button
                   variant="outline"
@@ -189,7 +189,7 @@ export const Header = (): JSX.Element => {
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
-            <DropdownMenu>
+            <DropdownMenu modal={false}>
               <DropdownMenuTrigger asChild>
                 <Button
                   variant="outline"
