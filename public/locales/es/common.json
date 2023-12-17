@@ -75,5 +75,19 @@
   "footer": {
     "madeWith": "Hecho con",
     "by": "por"
+  },
+  "accountSettings": {
+    "profile": "Perfil",
+    "headline": "Encabezado",
+    "about": "Descripción",
+    "linkName": "Nombre del Enlace",
+    "linkUrl": "URL del Enlace",
+    "addLink": "Añadir Enlace",
+    "remove": "Eliminar",
+    "save": "Guardar",
+    "changesSaved": "Cambios Guardados",
+    "changesSavedDesc": "Tus cambios han sido guardados exitosamente.",
+    "errorSaving": "Error al Guardar",
+    "errorSavingDesc": "Tus cambios no pudieron ser guardados. Por favor, intenta de nuevo."
   }
 }
