@@ -35,7 +35,7 @@ const AccountSettings: NextPage = () => {
 
   const { t } = useTranslation("common");
 
-  const { data: sessionData, status } = useSession();
+  const { data: sessionData, status } = useSession({ required: true });
 
   const userId = status === "authenticated" ? sessionData?.user?.id : "";
 
