@@ -56,7 +56,7 @@ export const Header = (): JSX.Element => {
     setLang(lang);
   };
 
-  const { data: sessionData } = useSession();
+  const { data: sessionData, status } = useSession();
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -105,16 +105,18 @@ export const Header = (): JSX.Element => {
         </div>
         <nav className="hidden items-center gap-4 font-medium xl:flex">
           <div className="flex gap-4">
-            {/*             <div>
-              {sessionData ? (
-                <DropdownMenu  modal={false}>
+            <div>
+              {status === "authenticated" ? (
+                <DropdownMenu modal={false}>
                   <DropdownMenuTrigger>
                     <Avatar className="border-[1px]">
                       <AvatarImage
                         src={sessionData.user.image ?? ""}
                         alt="User profile picture"
                       />
-                      <AvatarFallback>IC</AvatarFallback>
+                      <AvatarFallback>
+                        {sessionData.user?.name?.[0]?.toUpperCase()}
+                      </AvatarFallback>
                     </Avatar>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent>
@@ -124,14 +126,14 @@ export const Header = (): JSX.Element => {
                     <DropdownMenuSeparator />
                     <DropdownMenuItem className="text-muted-foreground">
                       <Link
-                        href="/settings"
-                        className="flex w-full items-center justify-between"
+                        href="/account-settings"
+                        className="flex w-full items-center justify-between gap-8"
                       >
                         {t("header.settings")} <Gear size={16} />
                       </Link>
                     </DropdownMenuItem>
                     <DropdownMenuItem
-                      className="flex w-full items-center justify-between text-muted-foreground"
+                      className="flex w-full items-center justify-between text-muted-foreground gap-8"
                       onClick={() => void signOut()}
                     >
                       {t("header.signOut")} <SignOut size={16} />
@@ -154,7 +156,7 @@ export const Header = (): JSX.Element => {
                 </Button>
               )}
             </div>
-            <Separator orientation="vertical" className="bg-primary" /> */}
+            <Separator orientation="vertical" className="bg-primary" />
             <DropdownMenu modal={false}>
               <DropdownMenuTrigger asChild>
                 <Button
@@ -218,7 +220,7 @@ export const Header = (): JSX.Element => {
       {isMenuOpen && (
         <div className="fixed inset-0 top-[72px] z-50 flex flex-col gap-6 bg-background/80 px-4 py-2 backdrop-blur-sm lg:px-16 xl:hidden">
           <nav className="flex flex-col gap-4">
-            {/* {sessionData ? (
+            {status === "authenticated" ? (
               <div className="flex flex-col gap-4">
                 <ul>
                   <li className="flex items-center justify-between border-b-[1px] py-2">
@@ -228,12 +230,14 @@ export const Header = (): JSX.Element => {
                         src={sessionData.user.image ?? ""}
                         alt="User profile picture"
                       />
-                      <AvatarFallback>IC</AvatarFallback>
+                      <AvatarFallback>
+                        {sessionData.user?.name?.[0]?.toUpperCase()}
+                      </AvatarFallback>
                     </Avatar>
                   </li>
                   <li className="border-b-[1px] py-3">
                     <Link
-                      href="/settings"
+                      href="/account-settings"
                       className="flex w-full items-center justify-between"
                     >
                       {t("header.settings")} <Gear size={24} />
@@ -264,7 +268,7 @@ export const Header = (): JSX.Element => {
                 />
                 {t("header.signIn")}
               </Button>
-            )} */}
+            )}
             <ul>
               <li className="flex items-center justify-between border-b-[1px] py-2">
                 {t("header.theme")}

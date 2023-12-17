@@ -76,5 +76,19 @@
   "footer": {
     "madeWith": "Made with",
     "by": "by"
+  },
+  "accountSettings": {
+    "profile": "Profile",
+    "headline": "Headline",
+    "about": "About",
+    "linkName": "Link Name",
+    "linkUrl": "Link URL",
+    "addLink": "Add Link",
+    "remove": "Remove",
+    "save": "Save",
+    "changesSaved": "Changes Saved",
+    "changesSavedDesc": "Your changes have been saved successfully.",
+    "errorSaving": "Error Saving",
+    "errorSavingDesc": "Your changes could not be saved. Please try again."
   }
 }
