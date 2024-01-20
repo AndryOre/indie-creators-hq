@@ -23,9 +23,9 @@ const Home: NextPage = () => {
         <DottedPattern className="-z-1 absolute" />
         <div className="z-10 flex flex-col items-center gap-8">
           <div className="flex flex-col items-center gap-4 text-center">
-            <div className="text-gradient text-5xl font-bold md:text-6xl xl:text-8xl">
+            <div className="text-gradient text-5xl font-bold md:text-6xl xl:text-8xl flex flex-col">
               <div>{t("hero.puv.powerYour")}</div>
-              <div>{t("hero.puv.creativity")}</div>
+              <div className="mb-1">{t("hero.puv.creativity")}</div>
             </div>
             <div className="text-muted-foreground lg:text-lg">
               <div>{t("hero.desc.unleash")}</div>
@@ -37,24 +37,16 @@ const Home: NextPage = () => {
             rel="noopener"
             target="_blank"
           >
-            <div className="dark:hidden">
-              <Button variant="secondary" aria-label={t("hero.cta")}>
-                <DiscordLogo size={24} className="mr-2" />
-                {t("hero.cta")}
-              </Button>
-            </div>
-            <div className="hidden dark:block">
-              <Button aria-label={t("hero.cta")}>
-                <DiscordLogo size={24} className="mr-2" />
-                {t("hero.cta")}
-              </Button>
-            </div>
+            <Button aria-label={t("hero.cta")}>
+              <DiscordLogo size={24} className="mr-2" />
+              {t("hero.cta")}
+            </Button>
           </Link>
         </div>
       </div>
       <div className="items-center flex flex-col justify-center gap-16 py-16">
         <div className="flex flex-col gap-4 text-center">
-          <div className="text-3xl font-bold text-secondary dark:text-primary md:text-4xl xl:text-5xl">
+          <div className="text-3xl font-bold text-primary dark:text-primary md:text-4xl xl:text-5xl">
             {t("communityBenefits.title")}
           </div>
           <div className="text-muted-foreground">
@@ -63,9 +55,9 @@ const Home: NextPage = () => {
         </div>
         <BenefitShowcase />
       </div>
-      <div className="items-center flex flex-col justify-center gap-16 py-16">
+      <div className="items-center flex flex-col justify-center gap-16 py-16 w-full">
         <div className="flex flex-col gap-4 text-center">
-          <div className="text-3xl font-bold text-secondary dark:text-primary md:text-4xl xl:text-5xl">
+          <div className="text-3xl font-bold text-primary dark:text-primary md:text-4xl xl:text-5xl">
             {t("popularProjects.title")}
           </div>
           <div className="text-muted-foreground">
@@ -80,15 +72,13 @@ const Home: NextPage = () => {
             rel="noopener"
             target="_blank"
           >
-            <Button variant="link" className="text-secondary dark:text-primary">
-              {t("popularProjects.joinNow")}
-            </Button>
+            <Button variant="link">{t("popularProjects.joinNow")}</Button>
           </Link>
         </div>
       </div>
       <div className="flex justify-between flex-col lg:flex-row gap-16 py-16 ">
         <div className="w-full lg:w-2/5 gap-4 flex flex-col">
-          <div className="text-3xl font-bold text-secondary dark:text-primary lg:text-4xl xl:text-5xl">
+          <div className="text-3xl font-bold text-primary dark:text-primary lg:text-4xl xl:text-5xl">
             {t("faqs.title")}
           </div>
           <div className="text-muted-foreground text-justify">

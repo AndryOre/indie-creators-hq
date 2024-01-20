@@ -8,8 +8,11 @@ import { ThemeProvider } from "@/components";
 import "@/styles/globals.css";
 import { api } from "@/utils/api";
 
+import nextI18NextConfig from "../../next-i18next.config";
+
 import { type Session } from "next-auth";
 import { SessionProvider } from "next-auth/react";
+import { type UserConfig } from "next-i18next";
 import { appWithTranslation } from "next-i18next";
 
 const spaceGrotesk = Space_Grotesk({
@@ -17,6 +20,13 @@ const spaceGrotesk = Space_Grotesk({
   weight: ["300", "400", "500", "600", "700"],
   variable: "--font-space-grotesk",
 });
+
+const emptyInitialI18NextConfig: UserConfig = {
+  i18n: {
+    defaultLocale: nextI18NextConfig.i18n.defaultLocale,
+    locales: nextI18NextConfig.i18n.locales,
+  },
+};
 
 const MyApp: AppType<{ session: Session | null }> = ({
   Component,
@@ -52,7 +62,7 @@ const MyApp: AppType<{ session: Session | null }> = ({
   );
 };
 
-const i18nApp = appWithTranslation(MyApp);
+const i18nApp = appWithTranslation(MyApp, emptyInitialI18NextConfig);
 const TRPCApp = api.withTRPC(i18nApp);
 
 export default TRPCApp;
