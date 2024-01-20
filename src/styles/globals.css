@@ -10,10 +10,10 @@
     --card-foreground: 20 14.3% 4.1%;
     --popover: 0 0% 100%;
     --popover-foreground: 20 14.3% 4.1%;
-    --primary: 60 100% 70%;
-    --primary-foreground: 26 83.3% 14.1%;
-    --secondary: 235 33% 53%;
-    --secondary-foreground: 24 9.8% 10%;
+    --primary: 235 33% 53%;
+    --primary-foreground: 210 20% 98%;
+    --secondary: 220 14.3% 95.9%;
+    --secondary-foreground: 220.9 39.3% 11%;
     --muted: 60 4.8% 95.9%;
     --muted-foreground: 25 5.3% 44.7%;
     --accent: 60 4.8% 95.9%;
@@ -35,7 +35,7 @@
     --popover-foreground: 60 9.1% 97.8%;
     --primary: 61 100% 50%;
     --primary-foreground: 26 83.3% 14.1%;
-    --secondary: 235 33% 53%;
+    --secondary: 12 6.5% 15.1%;
     --secondary-foreground: 60 9.1% 97.8%;
     --muted: 12 6.5% 15.1%;
     --muted-foreground: 24 5.4% 63.9%;
@@ -52,15 +52,17 @@
 @layer base {
   * {
     @apply border-border;
+    @apply transition-colors duration-1000;
   }
   body {
     @apply bg-background text-foreground;
+    @apply transition-colors duration-1000;
   }
 }
 
 @layer utilities {
   .text-gradient {
-    @apply bg-gradient-to-b from-secondary to-secondary-foreground bg-clip-text text-transparent dark:from-primary dark:to-primary-foreground;
+    @apply bg-gradient-to-b from-primary to-secondary-foreground bg-clip-text text-transparent dark:to-primary-foreground;
   }
 }
 

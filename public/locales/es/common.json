@@ -6,12 +6,16 @@
     "dark": "Oscuro",
     "system": "Sistema",
     "language": "Idioma",
+    "profile": "Perfil",
+    "mySideProjects": "Mis proyectos",
     "settings": "Ajustes",
     "signOut": "Cerrar sesión",
     "openMenu": "Abrir menú",
     "closeMenu": "Cerrar menú",
     "changeTheme": "Cambiar tema",
-    "changeLanguage": "Cambiar idioma"
+    "changeLanguage": "Cambiar idioma",
+    "projects": "Proyectos",
+    "members": "Miembros"
   },
   "hero": {
     "puv": {
@@ -76,10 +80,13 @@
     "madeWith": "Hecho con",
     "by": "por"
   },
-  "accountSettings": {
+  "editProfile": {
+    "page": "Editar Perfil",
     "profile": "Perfil",
+    "name": "Nombre",
     "headline": "Encabezado",
     "about": "Descripción",
+    "links": "Enlaces",
     "linkName": "Nombre del Enlace",
     "linkUrl": "URL del Enlace",
     "addLink": "Añadir Enlace",
@@ -88,6 +95,71 @@
     "changesSaved": "Cambios Guardados",
     "changesSavedDesc": "Tus cambios han sido guardados exitosamente.",
     "errorSaving": "Error al Guardar",
-    "errorSavingDesc": "Tus cambios no pudieron ser guardados. Por favor, intenta de nuevo."
+    "errorSavingDesc": "Tus cambios no pudieron ser guardados. Por favor, intenta de nuevo.",
+    "sideProject": "Proyecto",
+    "noSideProjectsYet": "Aún no tiene proyectos 😔",
+    "realNameRequired": "Nombre es requerido (mínimo 2 caracteres)",
+    "headlineMaxLength": "El encabezado no debe tener más de 40 caracteres",
+    "linkNameRequired": "El nombre del enlace debe tener al menos 1 carácter",
+    "linkUrlRequired": "Por favor, introduce una URL válida para el enlace"
+  },
+  "mySideProjects": {
+    "page": "Mis Proyectos",
+    "title": "Mis Proyectos",
+    "desc": "Explora y gestiona tus proyectos.",
+    "noSideProjectsTitle": "¡Aún no hay Proyectos!",
+    "noSideProjectsDesc": "Inicia tu viaje en proyectos. ¡Crea tu primer proyecto hoy y convierte tus ideas en realidad!",
+    "addSideProject": "Agregar Proyecto",
+    "newSideProject": "Nuevo Proyecto",
+    "editSideProject": "Editar Proyecto",
+    "processing": "Procesando...",
+    "logo": "Logotipo",
+    "url": "URL",
+    "name": "Nombre",
+    "tagline": "Eslogan",
+    "status": "Estado",
+    "statusSelect": "Seleccionar estado del proyecto",
+    "active": "Activo",
+    "building": "Construyendo",
+    "discontinued": "Descontinuado",
+    "acquired": "Adquirido",
+    "inactive": "Inactivo",
+    "sale": "Venta",
+    "cancel": "Cancelar",
+    "save": "Guardar",
+    "logoRequired": "El logotipo es obligatorio",
+    "urlRequired": "Por favor, introduce una URL válida",
+    "nameRequired": "El nombre debe tener al menos 2 caracteres",
+    "taglineRequired": "El eslogan debe tener al menos 10 caracteres",
+    "alredyExist": "¡Ups! Este proyecto ya existe.",
+    "createdTitle": "¡Genial!",
+    "createdDesc": "¡Tu nuevo proyecto está activo y listo para brillar!",
+    "edit": "Editar",
+    "remove": "Eliminar",
+    "updatedTitle": "¡Exito!",
+    "updatedDesc": "¡Los detalles de tu proyecto han sido actualizados exitosamente!",
+    "deleteTitle": "¿Estás seguro de querer eliminar este proyecto?",
+    "deleteDesc": "Estás a punto de eliminar permanentemente este proyecto y sus datos. Esta acción no se puede deshacer.",
+    "deletedTitle": "Proyecto Eliminado",
+    "deletedDesc": "El proyecto ha sido eliminado con éxito"
+  },
+  "imagePicker": {
+    "invalidFile": "El archivo seleccionado no es una imagen válida."
+  },
+  "sideProjects": {
+    "page": "Proyectos",
+    "title": "Explora los Proyectos de la Comunidad",
+    "desc": "Explora los proyectos de nuestra comunidad y despierta tu creatividad.",
+    "desc2": "¿Listo para crear?",
+    "cta": "¡Únete a nosotros!"
+  },
+  "members": {
+    "page": "Miembros",
+    "title": "Conoce a los Miembros de Nuestra Comunidad",
+    "desc": "Descubre a las personas apasionadas que impulsan nuestra comunidad.",
+    "desc2": "¿Quieres ser parte de ella?",
+    "cta": "¡Únete ahora!",
+    "viewProfile": "Ver Perfil",
+    "editProfile": "Editar Perfil"
   }
 }

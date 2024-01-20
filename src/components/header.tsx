@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useRouter } from "next/router";
 
 import {
@@ -22,13 +23,16 @@ import {
   SelectValue,
   Separator,
 } from "@/components/ui";
+import { cn } from "@/lib/utils";
 
 import IndieCreatorsHQDark from "../../public/assets/Indie_Creatos_HQ_Logo_Dark.svg";
 import IndieCreatorsHQLight from "../../public/assets/Indie_Creatos_HQ_Logo_Light.svg";
 
 import {
   DiscordLogo,
+  Folder,
   Gear,
+  IdentificationCard,
   List,
   Monitor,
   Moon,
@@ -46,6 +50,8 @@ export const Header = (): JSX.Element => {
 
   const router = useRouter();
 
+  const pathname = usePathname();
+
   const { t, i18n } = useTranslation();
 
   const [lang, setLang] = useState(i18n.language);
@@ -57,6 +63,18 @@ export const Header = (): JSX.Element => {
   };
 
   const { data: sessionData, status } = useSession();
+
+  const [userImage, setUserImage] = useState("");
+
+  useEffect(() => {
+    if (sessionData) {
+      if (sessionData?.user.image?.includes("/embed/avatars/")) {
+        setUserImage("");
+      } else {
+        setUserImage(sessionData?.user.image ?? "");
+      }
+    }
+  }, [sessionData]);
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -103,60 +121,95 @@ export const Header = (): JSX.Element => {
             </Button>
           </div>
         </div>
-        <nav className="hidden items-center gap-4 font-medium xl:flex">
-          <div className="flex gap-4">
-            <div>
-              {status === "authenticated" ? (
-                <DropdownMenu modal={false}>
-                  <DropdownMenuTrigger>
-                    <Avatar className="border-[1px]">
-                      <AvatarImage
-                        src={sessionData.user.image ?? ""}
-                        alt="User profile picture"
-                      />
-                      <AvatarFallback>
-                        {sessionData.user?.name?.[0]?.toUpperCase()}
-                      </AvatarFallback>
-                    </Avatar>
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent>
-                    <DropdownMenuLabel>
-                      {sessionData.user?.name}
-                    </DropdownMenuLabel>
-                    <DropdownMenuSeparator />
-                    <DropdownMenuItem className="text-muted-foreground">
-                      <Link
-                        href="/account-settings"
-                        className="flex w-full items-center justify-between gap-8"
-                      >
-                        {t("header.settings")} <Gear size={16} />
-                      </Link>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem
-                      className="flex w-full items-center justify-between text-muted-foreground gap-8"
-                      onClick={() => void signOut()}
+        <nav className="gap-8 items-center hidden xl:flex font-medium">
+          <Link
+            href="/side-projects"
+            className={cn(
+              "transition-colors hover:text-primary",
+              pathname?.startsWith("/side-projects")
+                ? "text-primary"
+                : "text-foreground",
+            )}
+          >
+            {t("header.projects")}
+          </Link>
+          <Link
+            href="/members"
+            className={cn(
+              "transition-colors hover:text-primary",
+              pathname?.startsWith("/members")
+                ? "text-primary"
+                : "text-foreground",
+            )}
+          >
+            {t("header.members")}
+          </Link>
+        </nav>
+        <div className="hidden items-center gap-4 font-medium xl:flex">
+          <div className="flex gap-4 items-center">
+            {status === "authenticated" ? (
+              <DropdownMenu modal={false}>
+                <DropdownMenuTrigger>
+                  <Avatar className="border">
+                    <AvatarImage src={userImage} alt="User profile picture" />
+                    <AvatarFallback>
+                      {sessionData.user?.name?.[0]?.toUpperCase()}
+                    </AvatarFallback>
+                  </Avatar>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent>
+                  <DropdownMenuLabel>
+                    {sessionData.user?.name}
+                  </DropdownMenuLabel>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem className="text-muted-foreground">
+                    <Link
+                      href={`/user/${sessionData.user?.name}`}
+                      className="flex w-full items-center justify-between gap-8"
                     >
-                      {t("header.signOut")} <SignOut size={16} />
-                    </DropdownMenuItem>
-                  </DropdownMenuContent>
-                </DropdownMenu>
-              ) : (
-                <Button
-                  variant="ghost"
-                  className="font-bold"
-                  onClick={() => void signIn("discord")}
-                  aria-label={t("header.signIn")}
-                >
-                  <DiscordLogo
-                    size={24}
-                    weight="fill"
-                    className="mr-2 text-[#5865F2]"
-                  />
-                  {t("header.signIn")}
-                </Button>
-              )}
-            </div>
-            <Separator orientation="vertical" className="bg-primary" />
+                      {t("header.profile")} <IdentificationCard size={16} />
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem className="text-muted-foreground">
+                    <Link
+                      href="/my-side-projects"
+                      className="flex w-full items-center justify-between gap-8"
+                    >
+                      {t("header.mySideProjects")} <Folder size={16} />
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem className="text-muted-foreground">
+                    <Link
+                      href="/edit-profile"
+                      className="flex w-full items-center justify-between gap-8"
+                    >
+                      {t("header.settings")} <Gear size={16} />
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem
+                    className="flex w-full items-center justify-between text-muted-foreground gap-8"
+                    onClick={() => void signOut()}
+                  >
+                    {t("header.signOut")} <SignOut size={16} />
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            ) : (
+              <Button
+                variant="outline"
+                className="font-bold"
+                onClick={() => void signIn("discord")}
+                aria-label={t("header.signIn")}
+              >
+                <DiscordLogo
+                  size={24}
+                  weight="fill"
+                  className="mr-2 text-[#5865F2]"
+                />
+                {t("header.signIn")}
+              </Button>
+            )}
+            <Separator orientation="vertical" className="bg-muted h-8" />
             <DropdownMenu modal={false}>
               <DropdownMenuTrigger asChild>
                 <Button
@@ -215,7 +268,7 @@ export const Header = (): JSX.Element => {
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
-        </nav>
+        </div>
       </div>
       {isMenuOpen && (
         <div className="fixed inset-0 top-[72px] z-50 flex flex-col gap-6 bg-background/80 px-4 py-2 backdrop-blur-sm lg:px-16 xl:hidden">
@@ -225,11 +278,8 @@ export const Header = (): JSX.Element => {
                 <ul>
                   <li className="flex items-center justify-between border-b-[1px] py-2">
                     <div>{sessionData.user?.name}</div>
-                    <Avatar className="border-[1px]">
-                      <AvatarImage
-                        src={sessionData.user.image ?? ""}
-                        alt="User profile picture"
-                      />
+                    <Avatar className="border">
+                      <AvatarImage src={userImage} alt="User profile picture" />
                       <AvatarFallback>
                         {sessionData.user?.name?.[0]?.toUpperCase()}
                       </AvatarFallback>
@@ -237,7 +287,23 @@ export const Header = (): JSX.Element => {
                   </li>
                   <li className="border-b-[1px] py-3">
                     <Link
-                      href="/account-settings"
+                      href={`/user/${sessionData.user?.name}`}
+                      className="flex w-full items-center justify-between"
+                    >
+                      {t("header.profile")} <IdentificationCard size={24} />
+                    </Link>
+                  </li>
+                  <li className="border-b-[1px] py-3">
+                    <Link
+                      href="/my-side-projects"
+                      className="flex w-full items-center justify-between"
+                    >
+                      {t("header.mySideProjects")} <Folder size={24} />
+                    </Link>
+                  </li>
+                  <li className="border-b-[1px] py-3">
+                    <Link
+                      href="/edit-profile"
                       className="flex w-full items-center justify-between"
                     >
                       {t("header.settings")} <Gear size={24} />
@@ -270,7 +336,33 @@ export const Header = (): JSX.Element => {
               </Button>
             )}
             <ul>
-              <li className="flex items-center justify-between border-b-[1px] py-2">
+              <li className="flex items-center justify-between border-b-[1px] py-4 font-medium">
+                <Link
+                  href="/side-projects"
+                  className={cn(
+                    "transition-colors hover:text-primary",
+                    pathname?.startsWith("/side-projects")
+                      ? "text-primary"
+                      : "text-foreground",
+                  )}
+                >
+                  {t("header.projects")}
+                </Link>
+              </li>
+              <li className="flex items-center justify-between border-b-[1px] py-4 font-medium">
+                <Link
+                  href="/members"
+                  className={cn(
+                    "transition-colors hover:text-primary",
+                    pathname?.startsWith("/members")
+                      ? "text-primary"
+                      : "text-foreground",
+                  )}
+                >
+                  {t("header.members")}
+                </Link>
+              </li>
+              <li className="flex items-center justify-between border-b-[1px] py-2 font-medium">
                 {t("header.theme")}
                 <Select
                   defaultValue={theme}
@@ -309,7 +401,7 @@ export const Header = (): JSX.Element => {
                   </SelectContent>
                 </Select>
               </li>
-              <li className="flex items-center justify-between border-b-[1px] py-2">
+              <li className="flex items-center justify-between border-b-[1px] py-2 font-medium">
                 {t("header.language")}
                 <Select
                   defaultValue={lang}

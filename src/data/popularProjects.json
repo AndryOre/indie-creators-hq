@@ -1,37 +1,32 @@
 [
   {
-    "logo": "https://www.twon.app/favicon.ico",
-    "name": "Twon",
-    "tagline": "Node-based AI tool for enhancing your Twitter & Threads post.",
-    "url": "https://www.twon.app/",
-    "productHuntSlug": "twon"
+    "logo": "https://framerusercontent.com/images/MBMiJDp6E8HwE1Bli6h3wYsgj0.png",
+    "name": "LunaNotes",
+    "tagline": "Turn Videos into Knowledge with LunaNotes.",
+    "url": "https://lunanotes.io/"
+  },
+  {
+    "logo": "https://www.howe.bio/favicon.ico",
+    "name": "Howe",
+    "tagline": "Your Bio, But With Superpowers.",
+    "url": "https://www.howe.bio/"
+  },
+  {
+    "logo": "https://jmkrivocapich.gallerycdn.vsassets.io/extensions/jmkrivocapich/drawfolderstructure/1.2.2/1703633564435/Microsoft.VisualStudio.Services.Icons.Default",
+    "name": "Draw Folder Structure",
+    "tagline": "Generate a visual Markdown representation of selected folder structures in VSCode.",
+    "url": "https://marketplace.visualstudio.com/items?itemName=jmkrivocapich.drawfolderstructure"
+  },
+  {
+    "logo": "https://ph-files.imgix.net/6bd7a793-e127-45a9-a748-0230fd9d4b8e.png",
+    "name": "Shine Lyrics",
+    "tagline": "Lyric translator for Spotify and YouTube Music.",
+    "url": "https://shine.whil.online/"
   },
   {
     "logo": "https://skillai.io/favicon.ico",
     "name": "SkillAI",
     "tagline": "Generating learning paths using AI for any skill.",
-    "url": "https://skillai.io/",
-    "productHuntSlug": "skillai"
-  },
-  {
-    "logo": "https://subs-apps.web.app/assets/favicon.webp",
-    "name": "subs",
-    "tagline": "Put a stop to the subscription chaos! 🤩",
-    "url": "https://subs-apps.web.app/",
-    "productHuntSlug": "subs-3"
-  },
-  {
-    "logo": "https://harvest.whil.online/harvest.svg",
-    "name": "Harvest",
-    "tagline": "Unleash the power of color in your images",
-    "url": "https://harvest.whil.online/",
-    "productHuntSlug": "harvest-4"
-  },
-  {
-    "logo": "https://shine.whil.online/thumbnail.png",
-    "name": "Shine Lyrics",
-    "tagline": "Lyric translator for Spotify and YouTube Music",
-    "url": "https://shine.whil.online/",
-    "productHuntSlug": "shine-lyrics"
+    "url": "https://skillai.io/"
   }
 ]

@@ -19,7 +19,7 @@ export default function MainLayout({ children }: MainLayoutProps): JSX.Element {
         style={{ gridTemplateRows: "auto 1fr auto" }}
       >
         <Header />
-        <main className="flex flex-col items-center overflow-x-hidden justify-center px-4 lg:px-16 xl:px-40">
+        <main className="flex flex-col items-center overflow-x-hidden px-4 lg:px-16 xl:px-40">
           {children}
         </main>
         <Toaster />

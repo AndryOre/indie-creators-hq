@@ -1,11 +1,15 @@
-import { createTRPCRouter, protectedProcedure } from "@/server/api/trpc";
+import {
+  createTRPCRouter,
+  protectedProcedure,
+  publicProcedure,
+} from "@/server/api/trpc";
 import { db } from "@/server/db";
 
 import { TRPCError } from "@trpc/server";
 import { z } from "zod";
 
 export const userRouter = createTRPCRouter({
-  getUserInfo: protectedProcedure
+  getUserById: protectedProcedure
     .input(z.object({ userId: z.string() }))
     .query(async ({ ctx, input }) => {
       try {
@@ -13,6 +17,7 @@ export const userRouter = createTRPCRouter({
           where: { id: input.userId },
           select: {
             name: true,
+            realName: true,
             image: true,
             headline: true,
             about: true,
@@ -34,10 +39,14 @@ export const userRouter = createTRPCRouter({
 
         return user;
       } catch (error) {
-        throw new TRPCError({
-          code: "INTERNAL_SERVER_ERROR",
-          message: "Failed to get user information",
-        });
+        if (error instanceof TRPCError && error.code === "NOT_FOUND") {
+          throw error;
+        } else {
+          throw new TRPCError({
+            code: "INTERNAL_SERVER_ERROR",
+            message: "Failed to get user information",
+          });
+        }
       }
     }),
 
@@ -45,6 +54,8 @@ export const userRouter = createTRPCRouter({
     .input(
       z.object({
         userId: z.string(),
+        image: z.string().optional(),
+        realName: z.string().optional(),
         headline: z.string().optional(),
         about: z.string().optional(),
         links: z
@@ -58,12 +69,14 @@ export const userRouter = createTRPCRouter({
       }),
     )
     .mutation(async ({ input }) => {
-      const { userId, headline, about, links } = input;
+      const { userId, image, realName, headline, about, links } = input;
 
       try {
         const updatedUser = await db.user.update({
           where: { id: userId },
           data: {
+            image,
+            realName,
             headline,
             about,
             links: {
@@ -72,6 +85,8 @@ export const userRouter = createTRPCRouter({
             },
           },
           select: {
+            image: true,
+            realName: true,
             headline: true,
             about: true,
             links: {
@@ -91,4 +106,80 @@ export const userRouter = createTRPCRouter({
         });
       }
     }),
+
+  getUserByName: publicProcedure
+    .input(z.object({ username: z.string() }))
+    .query(async ({ ctx, input }) => {
+      try {
+        const user = await ctx.db.user.findFirst({
+          where: { name: input.username },
+          select: {
+            id: true,
+            name: true,
+            realName: true,
+            image: true,
+            headline: true,
+            about: true,
+            links: {
+              select: {
+                name: true,
+                url: true,
+              },
+            },
+            SideProjects: true,
+          },
+        });
+
+        if (!user) {
+          throw new TRPCError({
+            code: "NOT_FOUND",
+            message: "User not found",
+          });
+        }
+
+        const sideProjectCount: number = user.SideProjects.length;
+
+        return {
+          ...user,
+          sideProjectCount,
+        };
+      } catch (error) {
+        if (error instanceof TRPCError && error.code === "NOT_FOUND") {
+          throw error;
+        } else {
+          throw new TRPCError({
+            code: "INTERNAL_SERVER_ERROR",
+            message: "Failed to get user by name",
+          });
+        }
+      }
+    }),
+
+  getAll: publicProcedure.query(async ({ ctx }) => {
+    try {
+      const users = await ctx.db.user.findMany({
+        select: {
+          id: true,
+          name: true,
+          realName: true,
+          image: true,
+          headline: true,
+          about: true,
+          links: {
+            select: {
+              name: true,
+              url: true,
+            },
+          },
+        },
+      });
+
+      return users;
+    } catch (error) {
+      throw new TRPCError({
+        code: "INTERNAL_SERVER_ERROR",
+        message: "Failed to get all members",
+      });
+    }
+  }),
 });
