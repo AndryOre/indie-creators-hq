@@ -6,6 +6,9 @@ await import("./src/env.mjs");
 const config = {
   reactStrictMode: true,
   i18n: nextI18NextConfig.i18n,
+  experimental: {
+    optimizePackageImports: ["@phosphor-icons/react"],
+  },
 };
 
 export default config;
