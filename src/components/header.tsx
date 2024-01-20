@@ -164,7 +164,7 @@ export const Header = (): JSX.Element => {
                   <DropdownMenuSeparator />
                   <DropdownMenuItem className="text-muted-foreground">
                     <Link
-                      href={`/user/${sessionData.user?.name}`}
+                      href={`/members/${sessionData.user?.name}`}
                       className="flex w-full items-center justify-between gap-8"
                     >
                       {t("header.profile")} <IdentificationCard size={16} />
@@ -287,7 +287,7 @@ export const Header = (): JSX.Element => {
                   </li>
                   <li className="border-b-[1px] py-3">
                     <Link
-                      href={`/user/${sessionData.user?.name}`}
+                      href={`/members/${sessionData.user?.name}`}
                       className="flex w-full items-center justify-between"
                     >
                       {t("header.profile")} <IdentificationCard size={24} />
