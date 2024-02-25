@@ -172,7 +172,7 @@ export const Header = (): JSX.Element => {
                   </DropdownMenuItem>
                   <DropdownMenuItem className="text-muted-foreground">
                     <Link
-                      href="/my-side-projects"
+                      href="/my/side-projects"
                       className="flex w-full items-center justify-between gap-8"
                     >
                       {t("header.mySideProjects")} <Folder size={16} />
@@ -180,7 +180,7 @@ export const Header = (): JSX.Element => {
                   </DropdownMenuItem>
                   <DropdownMenuItem className="text-muted-foreground">
                     <Link
-                      href="/edit-profile"
+                      href="/my/details"
                       className="flex w-full items-center justify-between gap-8"
                     >
                       {t("header.settings")} <Gear size={16} />
@@ -295,7 +295,7 @@ export const Header = (): JSX.Element => {
                   </li>
                   <li className="border-b-[1px] py-3">
                     <Link
-                      href="/my-side-projects"
+                      href="/my/side-projects"
                       className="flex w-full items-center justify-between"
                     >
                       {t("header.mySideProjects")} <Folder size={24} />
@@ -303,7 +303,7 @@ export const Header = (): JSX.Element => {
                   </li>
                   <li className="border-b-[1px] py-3">
                     <Link
-                      href="/edit-profile"
+                      href="/my/details"
                       className="flex w-full items-center justify-between"
                     >
                       {t("header.settings")} <Gear size={24} />

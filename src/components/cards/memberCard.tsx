@@ -19,7 +19,7 @@ import { type User } from "@prisma/client";
 import { useTranslation } from "next-i18next";
 
 type MemberCardProps = {
-  user: Omit<User, "email" | "emailVerified">;
+  user: Omit<User, "email" | "emailVerified" | "onBoardingComplete">;
 };
 
 export const MemberCard = ({ user }: MemberCardProps): JSX.Element => {
