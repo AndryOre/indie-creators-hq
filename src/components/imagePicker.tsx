@@ -86,7 +86,7 @@ export const ImagePicker = ({
   });
 
   return (
-    <div className="flex gap-4 items-center">
+    <div className="flex gap-4 items-center flex-col md:flex-row">
       <Avatar
         className={avatarClass}
         onClick={handleAvatarClick}
@@ -111,6 +111,11 @@ export const ImagePicker = ({
           ref={fileInputRef}
           className={inputClass}
         />
+        {!hideInput && (
+          <div className="text-sm text-muted-foreground">
+            {t("imagePicker.recommendedSize")}: 400x400px
+          </div>
+        )}
         {error && <div className="text-destructive">{error}</div>}
       </div>
     </div>
