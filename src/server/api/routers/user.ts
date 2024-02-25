@@ -66,10 +66,19 @@ export const userRouter = createTRPCRouter({
             }),
           )
           .optional(),
+        onBoardingComplete: z.boolean().optional(),
       }),
     )
     .mutation(async ({ input }) => {
-      const { userId, image, realName, headline, about, links } = input;
+      const {
+        userId,
+        image,
+        realName,
+        headline,
+        about,
+        links,
+        onBoardingComplete,
+      } = input;
 
       try {
         const updatedUser = await db.user.update({
@@ -83,6 +92,7 @@ export const userRouter = createTRPCRouter({
               deleteMany: { userId },
               create: links,
             },
+            onBoardingComplete: onBoardingComplete ?? true,
           },
           select: {
             image: true,

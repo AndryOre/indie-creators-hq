@@ -144,7 +144,8 @@
     "deletedDesc": "El proyecto ha sido eliminado con éxito"
   },
   "imagePicker": {
-    "invalidFile": "El archivo seleccionado no es una imagen válida."
+    "invalidFile": "El archivo seleccionado no es una imagen válida.",
+    "recommendedSize": "Tamaño recomendado"
   },
   "sideProjects": {
     "page": "Proyectos",
@@ -161,5 +162,44 @@
     "cta": "¡Únete ahora!",
     "viewProfile": "Ver Perfil",
     "editProfile": "Editar Perfil"
+  },
+  "welcome": {
+    "page": "Bienvenido a IndieCreators HQ",
+    "letsGetSetup": "Comencemos la configuración",
+    "gettingStarted": "Iniciando",
+    "gettingStartedDesc": "Tu información básica",
+    "gettingStartedDesc2": "¡Bienvenido! Empecemos con lo básico: tu nombre y una foto de perfil.",
+    "yourProfile": "Tu Perfil",
+    "yourProfileDesc": "Personaliza tu espacio",
+    "yourProfileDesc2": "Genial, {{name}}. Ahora, define tu encabezado y cuéntanos tu historia.",
+    "connect": "Conectar",
+    "connectDesc": "Conecta tu mundo",
+    "connectDesc2": "Expande tu red. Añade tus enlaces favoritos.",
+    "profilePicture": "Foto de Perfil",
+    "optional": "(Opcional)",
+    "fullName": "Nombre Completo",
+    "enterYourFullName": "Ingresa tu nombre completo",
+    "headline": "Encabezado",
+    "whatsYourTagline": "¿Cuál es tu lema?",
+    "about": "Acerca de",
+    "shareABitAboutYourself": "Comparte un poco sobre ti",
+    "linkName": "Nombre del Enlace",
+    "linkUrl": "URL del Enlace",
+    "addLink": "Añadir Enlace",
+    "remove": "Eliminar",
+    "back": "Atrás",
+    "continue": "Continuar",
+    "processing": "Procesando...",
+    "finish": "Finalizar",
+    "welcomeAboard": "Bienvenido a bordo, {{name}}! 👋",
+    "welcomeAboardDesc": "Has configurado exitosamente tu perfil, ahora comienza la verdadera diversión. ¡Salta directamente!",
+    "showcaseYourWork": "Muestra tu trabajo",
+    "showcaseYourWorkDesc": "Agrega tus proyectos. ¡Impresiona a la comunidad!",
+    "shareAndDiscoverResources": "Comparte y Descubre Recursos",
+    "shareAndDiscoverResourcesDesc": "Publica herramientas, obtén perspectivas. ¡Colabora de manera más inteligente!",
+    "joinTheConversation": "Únete a la conversación",
+    "joinTheConversationDesc": "Únete a Discord. Charla, colabora, ¡crece!",
+    "welcomeAboardDesc2": "¡Hagamos que las cosas sucedan juntos!",
+    "redirected": "Serás redirigido en {{counter}} segundos..."
   }
 }

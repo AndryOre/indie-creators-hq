@@ -66,16 +66,17 @@ model Link {
 }
 
 model User {
-  id            String        @id @default(uuid())
-  name          String        @unique
-  realName      String?
-  email         String?       @unique
-  emailVerified DateTime?
-  image         String?
-  accounts      Account[]
-  sessions      Session[]
-  headline      String?
-  about         String?
-  links         Link[]
-  SideProjects  SideProject[]
+  id                 String        @id @default(uuid())
+  name               String        @unique
+  realName           String?
+  email              String?       @unique
+  emailVerified      DateTime?
+  image              String?       @db.LongText
+  accounts           Account[]
+  sessions           Session[]
+  headline           String?
+  about              String?
+  links              Link[]
+  SideProjects       SideProject[]
+  onBoardingComplete Boolean       @default(false)
 }

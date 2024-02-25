@@ -144,7 +144,8 @@
     "deletedDesc": "The side project has been successfully deleted"
   },
   "imagePicker": {
-    "invalidFile": "The selected file is not a valid image."
+    "invalidFile": "The selected file is not a valid image.",
+    "recommendedSize": "Recommended size"
   },
   "sideProjects": {
     "page": "Side Projects",
@@ -161,5 +162,44 @@
     "cta": "Join now!",
     "viewProfile": "View Profile",
     "editProfile": "Edit Profile"
+  },
+  "welcome": {
+    "page": "Welcome to Indie Creators HQ",
+    "letsGetSetup": "Let's Get Set Up",
+    "gettingStarted": "Getting Started",
+    "gettingStartedDesc": "Your basic info",
+    "gettingStartedDesc2": "Welcome! Let's start with the basics: your name and a profile picture.",
+    "yourProfile": "Your Profile",
+    "yourProfileDesc": "Personalize your space",
+    "yourProfileDesc2": "Awesome, {{name}}. Now, define your headline and tell us your story.",
+    "connect": "Connect",
+    "connectDesc": "Link your world",
+    "connectDesc2": "Expand your network. Add your favorite links.",
+    "profilePicture": "Profile Picture",
+    "optional": "(Optional)",
+    "fullName": "Full Name",
+    "enterYourFullName": "Enter your full name",
+    "headline": "Headline",
+    "whatsYourTagline": "What's your tagline?",
+    "about": "About",
+    "shareABitAboutYourself": "Share a bit about yourself",
+    "linkName": "Link Name",
+    "linkUrl": "Link URL",
+    "addLink": "Add Link",
+    "remove": "Remove",
+    "back": "Back",
+    "continue": "Continue",
+    "processing": "Processing...",
+    "finish": "Finish",
+    "welcomeAboard": "Welcome Aboard,  {{name}}! 👋",
+    "welcomeAboardDesc": "You've successfully set up your profile - now the real fun begins. Jump right in:",
+    "showcaseYourWork": "Showcase Your Work",
+    "showcaseYourWorkDesc": "Add your projects. Impress the community!",
+    "shareAndDiscoverResources": "Share and Discover Resources",
+    "shareAndDiscoverResourcesDesc": "Post tools, gain insights. Collaborate smarter.",
+    "joinTheConversation": "Join the conversation",
+    "joinTheConversationDesc": "Hop into Discord. Chat, collaborate, grow!",
+    "welcomeAboardDesc2": "Let's make things happen together!",
+    "redirected": "You will be redirected in {{counter}} seconds..."
   }
 }
